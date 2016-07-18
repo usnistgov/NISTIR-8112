@@ -1,0 +1,43 @@
+# Site settings
+title: NISTIR 8112 Attribute Metadata (Draft)
+description: "Public Draft for NIST Internal Report:8112 Attribute Metadata"
+baseurl: "/NISTIR-8112" # the subpath of your site, e.g. /blog
+url: "https://pages.nist.gov/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+exclude:
+- ".ruby-version"
+- ".jekyll-metadata"
+- ".gitignore"
+- ".travis.yml"
+- todo.txt
+- resources
+- Gemfile
+- Gemfile.lock
+- Makefile
+- vendor
+- README.md
+- CONTRIBUTING.md
+- LICENSE.md
+
+# GitHub information
+org_name: usnistgov
+repo_name: NISTIR-8112
+
+# Navigation
+# List links that should appear in the site sidebar here
+navigation:
+- text: Home
+  url: /NISTIR-8112/
+#- text: SP 800-63-3
+#  url: /800-63-3/sp800-63-3/
+#- text: SP 800-63A
+#  url: /800-63-3/sp800-63a/
+#- text: SP 800-63B
+#  url: /800-63-3/sp800-63b/
+#- text: SP 800-63C
+#  url: /800-63-3/sp800-63c/
+
+host: 0.0.0.0
