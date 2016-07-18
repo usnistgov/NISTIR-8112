@@ -31,7 +31,7 @@ repo_name: NISTIR-8112
 navigation:
 - text: Home
   url: /NISTIR-8112/
-#- text: SP 800-63-3
+- text: NISTIR-8112
 #  url: /800-63-3/sp800-63-3/
 #- text: SP 800-63A
 #  url: /800-63-3/sp800-63a/
