@@ -6,7 +6,7 @@ description: "Guide on providing feedback"
 
 # Providing Feedback
 
-1. **Review the documentation.** No account is needed to review the updated version of NIST SP 800-63-3. Simply follow this link and enjoy at your leisure. However, if you wish to comment you must…
+1. **Review the documentation.** No account is needed to review the draft of NISTIR 8112. Simply follow this link and enjoy at your leisure. However, if you wish to comment you must…
 
 2. **Establish a GitHub account.** In order to submit a comment through the GitHub “Issues” feature, you will need to create a GitHub account. This can be done by proceeding to [https://github.com/join](). GitHub allows you to remain pseudonymous if you would like, just make sure you select the options that suit you on the “Profile” and “Emails” pages of your “Personal Settings”.  We also highly encourage you to turn on two-factor authentication in the “Security” page, also part of “Personal Settings”.  
   ![](assets/create_github_account.png)
