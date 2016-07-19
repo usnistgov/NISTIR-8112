@@ -167,7 +167,7 @@ This document defines a set of optional elements to support cross-organization c
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value.<br>| <div class="text-right" markdown="1"><ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul></div>
+**Verifier** |The entity that verified the attribute's value.<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
 **Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li> Proof of Possession</li><li>Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
@@ -183,7 +183,6 @@ This document defines a set of optional elements to support cross-organization c
 **Classification** | The U.S. Federal Government security classification level of the attribute.| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
 **Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released. | <ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
 
-</div>
 
 The schema in this document is intended to demonstrate the value of attribute and attribute value metadata in supporting U.S. Federal Government use cases and it is envisioned that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
 

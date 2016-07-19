@@ -73,14 +73,14 @@ The sections that follow list and provide details on the elements in each catego
 
 #### 3.2.1.1. Accuracy Metadata Elements
 
-<div class="text-right" markdown="1">
+
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Verifier** |The entity that verified the attribute's value<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
 **Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li>Proof of Possession</li><li>Not Verified</li></ul>
 
-</div>
+
 
 ##### Verifier
 
@@ -123,7 +123,7 @@ RPs may not trust certain attribute values unless they've been verified within a
 
 #### 3.2.1.3. Provenance Metadata
 
-<div class="text-right" markdown="1">
+
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
@@ -131,7 +131,7 @@ RPs may not trust certain attribute values unless they've been verified within a
 **Provider** |The legal name of the entity that is providing the attribute|<ul><li>Provider's Name</li><li>None</li></ul>
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value|<ul><li>Authoritative</li><li>Sourced</li><li>Self-Asserted</li><li>Derived</li></ul>
 
-</div>
+
 
 ##### Origin
 
@@ -154,7 +154,7 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 #### 3.2.1.4. Privacy Metadata
 
-<div class="text-right" markdown="1">
+
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
@@ -164,7 +164,7 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records| No restrictions
 
-</div>
+
 
 ##### Individual Consented
 
@@ -197,14 +197,14 @@ This refers to long-term holding of attribute values. Minimizing data, and indic
 
 #### 3.2.1.5. Classification Metadata
 
-<div class="text-right" markdown="1">
+
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Classification** | The U.S. Federal Government security classification level of the attribute| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
 **Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released|<ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
 
-</div>
+
 
 ##### Classification
 
