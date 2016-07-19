@@ -17,18 +17,16 @@ Click [here](NISTIR-8112.html) to access the document.
 
 ## Note to Reviewers
 
+Feedback on any part of this publication is welcome and encouraged. We chose the NISTIR route in an effort to treat this document as an _implementors draft_, an approach common in the development lifecycle of many private sector standards and specifications. This allows the development and policy community, in both the public and private sector, to implement some or all of the metadata in this NISTIR on a volunteer basis, and provide us practical feedback during the implementation.  The 60-day comment period is a valuable part of the effort to release this publication, but implementation is where we will learn the most, and answer questions such as:    
+
+- Will this be adopted?
+- Is the body of attribute metadata complete?  What is missing?
+- Is the categorization adequate and complete?  Did we miss anything that is critical to improve trust and confidence in decision making based on federated attributes?
+- Is trust-time vs. run-time sufficient?  Should the defined attribute metadata be shifted among these two lifecycle phases?
+- Do we need attribute and attribute value metadata?
 
 
-
-## Why GitHub
-
-Ok, "Why GitHub?" you ask. For us, the choice was relatively straightforward. GitHub has been a mainstay of the development and standards communities for many years now, serving as a space for collaborative interaction, the epicenter for evolving open source software, and an essential component in every coder’s toolkit. It only seemed appropriate for us to engage where so much of our community already congregates and collaborates. 
-
-Second, as a platform, GitHub has many unique characteristics that make it attractive as a place to develop this special publication. From its ability to support broad engagement, to excellent version control, and multiple avenues for collecting and receiving input—it is a robust forum suited to this type of document.
-
-Overall, GitHub is the right tool for the job. 
-
-Commenters are **STRONGLY** encouraged to collaborate with the team and other public participants via GitHub issues. See [this page](comment_help.html) for details on how to submit a comment to us.  We want to maintain a lean approach, so we are discouraging email and Excel files. We thank you in advance for your efforts to keep this process streamlined for the editors. 
+Commenters are **STRONGLY** encouraged to collaborate with the team and other public participants via GitHub issues. See [this page](comment_help.html) for details on how to submit a comment to us.  We want to maintain a lean approach, so we are discouraging email and Excel files, but we will accept them. In instances where comments come to us outside of GitHub, we will post them, preserving commenter anonymity, so that we can continue to reference document edits to accepted issues. We thank you in advance for your efforts to keep this process streamlined for the editors. 
 
 Information from the workshop held in January 2016 can be found [here](http://csrc.nist.gov/publications/drafts/nistir-8103/nistir_8103_draft.pdf).
 
