@@ -4,9 +4,9 @@
 
 # Attribute Metadata
 
-Paul A. Grassi
-Ellen M. Nadeau
-Ryan J. Galluzzo
+Paul A. Grassi  
+Ellen M. Nadeau  
+Ryan J. Galluzzo  
 
 {::comment}
 
@@ -15,14 +15,14 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 
 {:/comment}
 
-![](media/csd.png)  
-![](media/nist_logo.png)
+![](media/csd.png)    
+![](media/nist_logo.png)  
 
 # NIST Internal Report 8112 Draft
 
 # Attribute Metadata
 
-Paul A. Grassi
+Paul A. Grassi  
 Ellen M. Nadeau  
 *Applied CyberSecurity Division  
 Information Technology Laboratory*
@@ -38,7 +38,7 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 
 {:/comment}
 
-June 2016
+July 2016
 
 ![](media/commerce_logo.png)
 
@@ -152,7 +152,7 @@ This NIST IR proposes a schema for attribute metadata and attribute value metada
 
 This document defines a set of optional elements to support cross-organization confidence in attribute assertions as well as the semantics and syntax required to support interoperability. The schema contains two core components, `attribute metadata` and `attribute value metadata` which, along with their suggested elements, are described below:
 
-* **Attribute Metadata** – Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height`= 72). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
+* **Attribute Metadata** – Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
 | ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
@@ -162,6 +162,8 @@ This document defines a set of optional elements to support cross-organization c
 | **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute.|None |
 
 * **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
+
+<div class="text-right" markdown="1">
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
@@ -180,6 +182,8 @@ This document defines a set of optional elements to support cross-organization c
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records.| No restrictions
 **Classification** | The U.S. Federal Government security classification level of the attribute.| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
 **Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released. | <ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
+
+</div>
 
 The schema in this document is intended to demonstrate the value of attribute and attribute value metadata in supporting U.S. Federal Government use cases and it is envisioned that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
 
