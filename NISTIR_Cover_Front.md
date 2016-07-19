@@ -110,7 +110,7 @@ This NIST Internal Report contains a metadata schema for attributes that may be 
 Access control, assertions, attributes, attribute metadata, attribute values, attribute value metadata, authorization, federation, identity, identity federation, information security, metadata, privacy, risk, risk management, security, trust
 
 ### Acknowledgements
-The authors would like to thank Josh Freedman for his significant contributions to this report, as well as Sean Brooks and Naomi Lefkovitz for their considerate inclusion of privacy related content.  In addition, we would like to thank Anil John and the Federal Identity, Credential, and Access Management (FICAM) Attribute Tiger Team for their leadership in developing the initial set of attribute metadata necessary for federal systems. Finally, we express significant gratitude to Darran Rolls of SailPoint Technologies, Inc., as well as Gerry Gebel and David Brossard of Axiomatics, for their insightful review of this report. 
+The authors would like to thank Josh Freedman for his significant contributions to this report, as well as Sean Brooks and Naomi Lefkovitz for their considerate inclusion of privacy related content.  In addition, we would like to thank Anil John and the Federal Identity, Credential, and Access Management (FICAM) Attribute Tiger Team for their leadership in developing the initial set of attribute metadata necessary for federal systems. Finally, we express significant gratitude to Darran Rolls of SailPoint Technologies, Inc., as well as Gerry Gebel and David Brossard of Axiomatics, for their insightful review of this report.
 
 ### Audience
 
@@ -146,7 +146,7 @@ This NIST IR proposes a schema for attribute metadata and attribute value metada
 
 * Obtain greater understanding of how the attribute and its value were obtained, determined, and vetted;
 * Have greater confidence in applying appropriate authorization decisions to subjects external to the domain of a protected system or data;
-* Develop more granular access control policies; 
+* Develop more granular access control policies;
 * Make more effective authorization decisions; and
 * Promote federation of attributes.
 
@@ -167,21 +167,21 @@ This document defines a set of optional elements to support cross-organization c
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value.<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
-**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li> Proof of Possession</li><li>Not Verified
+**Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified</li></ul>
+**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> - Proof of Possession <br> -Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
 **Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual.|No restrictions
-**Origin** |The legal name of the entity that issues or creates the initial attribute value.|<ul><li>Origin's name</li><li>None</li></ul>
-**Provider** |The legal name of the entity that is providing the attribute.|<ul><li>Provider's Name</li><li>None</li></ul>
-**Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| <ul><li>Authoritative</li><li>Sourced</li><li>Self-Asserted</li><li>Derived</li></ul>
-**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| <ul><li>Yes</li><li>No </li><li>Unknown</li></ul>
+**Origin** |The legal name of the entity that issues or creates the initial attribute value.| -Origin's name <br> -None
+**Provider** |The legal name of the entity that is providing the attribute.|-Provider's Name <br> -None
+**Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| -Authoritative <br> -Sourced <br> -Self-Asserted <br> -Derived
+**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| -Yes <br> -No <br> -Unknown
 **Date Consented** | The date on which express consent for release of the attribute value was acquired. | No restrictions
-**Acceptable Uses** |Allowed uses for entities that ingest attributes.| <ul><li>Authorization</li><li>Secondary Use</li><li>No Further Disclosure</li></ul>
+**Acceptable Uses** |Allowed uses for entities that ingest attributes.| -Authorization <br> -Secondary Use <br> -No Further Disclosure
 **Cache Time To Live** |The length of time for which an attribute value may be cached.| No restrictions
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records.| No restrictions
-**Classification** | The U.S. Federal Government security classification level of the attribute.| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
-**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released. | <ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
+**Classification** | The U.S. Federal Government security classification level of the attribute.| -Unclassified <br> -Controlled Unclassified <br> -Confidential <br> -Secret <br> -Top Secret
+**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released. | -NATO <br> -FVEY <br> -NOFORN <br> -Public Release <br> -None
 
 
 The schema in this document is intended to demonstrate the value of attribute and attribute value metadata in supporting U.S. Federal Government use cases and it is envisioned that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
