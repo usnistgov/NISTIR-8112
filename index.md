@@ -8,17 +8,16 @@ description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 # Attribute Metadata: Public Draft Open For Comments!
 
 </section>
-<section class="home home-about" markdown="1">
-<div class="section-container" markdown="1">
-<div class="section-content" markdown="1">
+
+**_Under Development_**
 
 Welcome to the NIST IR 8112 Public Draft!  We're excited to share  this document and collaboratively enhance and evolve this IR.
 
+Click [here](NISTIR-8112.html) to access the document.
+
 ## Note to Reviewers
 
-### Public preview vs public draft
 
-If you've made it to this page, you can see we're approaching this a little differently by putting our work up on GitHub, rather than the "traditional" comment period for a NIST Internal Report (IR). We're calling it a public preview because some of our agency partners (and NIST itself) have formal processes for public drafts. Calling it a public preview is our way of letting everyone know those processes aren't in play. This lets us do things differently...
 
 
 ## Why GitHub
@@ -33,4 +32,3 @@ Commenters are **STRONGLY** encouraged to collaborate with the team and other pu
 
 Information from the workshop held in January 2016 can be found [here](http://csrc.nist.gov/publications/drafts/nistir-8103/nistir_8103_draft.pdf).
 
-</section>
