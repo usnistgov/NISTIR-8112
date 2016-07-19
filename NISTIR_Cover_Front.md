@@ -104,7 +104,7 @@ outreach efforts in information system security, and its collaborative
 activities with industry, government, and academic organizations.
 
 ### Abstract
-This NIST Internal Report contains a metadata schema for attributes that may be asserted about an individual during an online transaction. The schema can be used by relying parties to enrich access control policies, as well as during runtime evaluation of an individual's ability to access protected resources, and for an indivdual's. Attribute metadata could also create the possiblity for data sharing permissions and limitations on individual data elements. There are other possible applications of attribute metadata, such as evaluation and execution of business logic in decision support systems; however the metadata contained herein is focused on supporting an organization's risk-informed authorization policies and evaluation.
+This NIST Internal Report contains a metadata schema for attributes that may be asserted about an individual during an online transaction. The schema can be used by relying parties to enrich access control policies, as well as during runtime evaluation of an individual's ability to access protected resources, and for an individual's. Attribute metadata could also create the possibility for data sharing permissions and limitations on individual data elements. There are other possible applications of attribute metadata, such as evaluation and execution of business logic in decision support systems; however the metadata contained herein is focused on supporting an organization's risk-informed authorization policies and evaluation.
 
 ### Keywords
 Access control, assertions, attributes, attribute metadata, attribute values, attribute value metadata, authorization, federation, identity, identity federation, information security, metadata, privacy, risk, risk management, security, trust
@@ -155,16 +155,16 @@ This document defines a set of optional elements to support cross-organization c
 * **Attribute Metadata** – Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height`= 72). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
-| ------------------- |:------------------------------------------------------------------------------------|:---------------------------------------------:|
+| ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
 | **Description** | An informative description of the attribute. |   None |
-| **Allowed Values** | A defined set of allowed values for the attribute  |   None  |     
-|**Format**| A defined format in which the attribute will be expressed| None |
+| **Allowed Values** | A defined set of allowed values for the attribute.  |   None  |     
+|**Format**| A defined format in which the attribute will be expressed.| None |
 | **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute.|None |
 
-* **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subjects home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
+* **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
 
 **Metadata Element**|**Description**|**Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Verifier** |The entity that verified the attribute's value.<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
 **Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li> Proof of Possession</li><li>Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
@@ -174,12 +174,12 @@ This document defines a set of optional elements to support cross-organization c
 **Provider** |The legal name of the entity that is providing the attribute.|<ul><li>Provider's Name</li><li>None</li></ul>
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| <ul><li>Authoritative</li><li>Sourced</li><li>Self-Asserted</li><li>Derived</li></ul>
 **Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| <ul><li>Yes</li><li>No </li><li>Unknown</li></ul>
-**Date Consented** | The date on which express consent for release of the attribute value was acquired. | Not restrictions
+**Date Consented** | The date on which express consent for release of the attribute value was acquired. | No restrictions
 **Acceptable Uses** |Allowed uses for entities that ingest attributes.| <ul><li>Authorization</li><li>Secondary Use</li><li>No Further Disclosure</li></ul>
 **Cache Time To Live** |The length of time for which an attribute value may be cached.| No restrictions
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records.| No restrictions
 **Classification** | The U.S. Federal Government security classification level of the attribute.| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
-**Releasability** |  The U.S. Federal Government restrictions regarding to whom and attribute value may be released. | <ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
+**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released. | <ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
 
 The schema in this document is intended to demonstrate the value of attribute and attribute value metadata in supporting U.S. Federal Government use cases and it is envisioned that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
 

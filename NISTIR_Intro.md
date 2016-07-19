@@ -29,4 +29,4 @@ Specifically, this document addresses the following:
 ![](media/Generic.png)
 
 
-While the schema in this document is intended to demonstrate the value of attribute metadata in supporting U.S. Federal Government use cases, the ideal metadata schema could be used in both commercial and public sector implementations, thus serving as a foundation to enable greater federation across markets and sectors. Furthermore, NIST intendes for the schema to be protocol and technology agnostic, thus capable of being supported across the spectrum of modern runtime access control architectures.
+While the schema in this document is intended to demonstrate the value of attribute metadata in supporting U.S. Federal Government use cases, the ideal metadata schema could be used in both commercial and public sector implementations, thus serving as a foundation to enable greater federation across markets and sectors. Furthermore, NIST intends for the schema to be protocol and technology agnostic, thus capable of being supported across the spectrum of modern runtime access control architectures.

@@ -17,7 +17,7 @@ Attribute metadata provide information that is applicable to the attribute being
 <a name="table1"></a> **Table 1: Attribute Metadata**
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
-| ------------------- |:------------------------------------------------------------------------------------|:---------------------------------------------|
+| ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
 | **Description** | An informative description of the attribute                                                      |                         None                      |  
 | **Allowed Values** | A defined set of allowed values for the attribute         |             None                                  |                                                    
 |**Format**| A defined format in which the attribute will be expressed| None|
@@ -74,7 +74,7 @@ The sections that follow list and provide details on the elements in each catego
 #### 3.2.1.1. Accuracy Metadata Elements
 
 **Metadata Element**|**Description**|**Recommended Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Verifier** |The entity that verified the attribute's value<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
 **Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li>Proof of Possession</li><li>Not Verified</li></ul>
 
@@ -99,7 +99,7 @@ This metadata element contains information on the process used to confirm that a
 #### 3.2.1.2. Currency Metadata
 
 **Metadata Element**|**Description**|**Recommended Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Last Update** |The date and time when the attribute was last updated |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid|No restrictions
 **Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual|No restrictions
@@ -120,7 +120,7 @@ RPs may not trust certain attribute values unless they've been verified within a
 #### 3.2.1.3. Provenance Metadata
 
 **Metadata Element**|**Description**|**Recommended Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Origin** |The legal name of the entity that issues or creates the initial attribute value|<ul><li>Origin's name</li><li>None</li></ul>
 **Provider** |The legal name of the entity that is providing the attribute|<ul><li>Provider's Name</li><li>None</li></ul>
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value|<ul><li>Authoritative</li><li>Sourced</li><li>Self-Asserted</li><li>Derived</li></ul>
@@ -147,7 +147,7 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 #### 3.2.1.4. Privacy Metadata
 
 **Metadata Element**|**Description**|**Recommended Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Individual Consented** |Captures whether the user has expressly consented to providing the attribute value|<ul><li>Yes</li><li>No </li><li>Unknown</li></ul>
 **Date Consented** | The date on which express consent for release of the attribute value was acquired| No restrictions
 **Acceptable Uses** |Allowed uses for entities that receive attributes| <ul><li>Authorization</li><li>Secondary Use</li><li>No Further Disclosure</li></ul>
@@ -186,9 +186,9 @@ This refers to long-term holding of attribute values. Minimizing data, and indic
 #### 3.2.1.5. Classification Metadata
 
 **Metadata Element**|**Description**|**Recommended Values**
-:--------------------|:--------------|:------------
+--------------------|--------------|------------
 **Classification** | The U.S. Federal Government security classification level of the attribute| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
-**Releasability** |  The U.S. Federal Government restrictions regarding to whom and attribute value may be released|<ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
+**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released|<ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
 
 ##### Classification
 
