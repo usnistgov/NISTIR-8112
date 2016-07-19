@@ -8,6 +8,7 @@ url: "https://pages.nist.gov/" # the base hostname & protocol for your site
 markdown: kramdown
 
 exclude:
+- ".md"
 - ".ruby-version"
 - ".jekyll-metadata"
 - ".gitignore"
