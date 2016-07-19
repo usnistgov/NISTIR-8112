@@ -77,8 +77,8 @@ The sections that follow list and provide details on the elements in each catego
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
-**Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li>Proof of Possession</li><li>Not Verified</li></ul>
+**Verifier** |The entity that verified the attribute's value<br>| -Origin <br> -Provider <br> -Not Verified
+**Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> -Proof of Possession <br> -Not Verified
 
 
 
@@ -127,9 +127,9 @@ RPs may not trust certain attribute values unless they've been verified within a
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Origin** |The legal name of the entity that issues or creates the initial attribute value|<ul><li>Origin's name</li><li>None</li></ul>
-**Provider** |The legal name of the entity that is providing the attribute|<ul><li>Provider's Name</li><li>None</li></ul>
-**Pedigree** |Description of the attribute value's relationship to the authoritative source of the value|<ul><li>Authoritative</li><li>Sourced</li><li>Self-Asserted</li><li>Derived</li></ul>
+**Origin** |The legal name of the entity that issues or creates the initial attribute value| -Origin's name <br> -None
+**Provider** |The legal name of the entity that is providing the attribute|-Provider's Name <br> -None
+**Pedigree** |Description of the attribute value's relationship to the authoritative source of the value|-Authoritative <br> -Sourced <br> -Self-Asserted <br> -Derived
 
 
 
@@ -148,7 +148,7 @@ This specifies the legal name of the entity that supplies the attribute value to
 1. **Authoritative** - The attribute's value was acquired directly from the source of authority. For example, an AP has received a driver's license number directly from the state DMV which issued the license.
 1. **Sourced** - The attribute's value has been acquired from one or more non-authoritative sources. For example, an AP purchases a driver's license number from a third-party data aggregator.
 1. **Self-Asserted** - The value was provided to the AP directly by the individual with whom the attribute value is associated. For example, an AP receives a driver's license number directly from the individual who claims ownership of the license through a web form or questionnaire. Self-asserted attributes may also be verified or unverified.
-1. **Derived** - The attribute value was produced through the analysis and manipulation of related attribute values and data. For example, if an AP requests a user's age, but it's not on file, then the AP may leverage the user's date of birth to assert age. 
+1. **Derived** - The attribute value was produced through the analysis and manipulation of related attribute values and data. For example, if an AP requests a user's age, but it's not on file, then the AP may leverage the user's date of birth to assert age.
 
 Taken in conjunction with the accuracy metadata, this information can enable the RP to better understand the origin of an attribute value, how it relates to its authoritative source, and how it has been verified — all of which help an RP establish a more complete picture of the value's usefulness and trustworthiness.
 
@@ -158,9 +158,9 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value|<ul><li>Yes</li><li>No </li><li>Unknown</li></ul>
+**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value|-Yes <br> -No <br> -Unknown
 **Date Consented** | The date on which express consent for release of the attribute value was acquired| No restrictions
-**Acceptable Uses** |Allowed uses for entities that receive attributes| <ul><li>Authorization</li><li>Secondary Use</li><li>No Further Disclosure</li></ul>
+**Acceptable Uses** |Allowed uses for entities that receive attributes| -Authorization <br> -Secondary Use <br> -No Further Disclosure
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records| No restrictions
 
@@ -201,8 +201,8 @@ This refers to long-term holding of attribute values. Minimizing data, and indic
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Classification** | The U.S. Federal Government security classification level of the attribute| <ul><li>Unclassified</li><li>Controlled Unclassified</li><li>Secret</li><li>Top Secret</li></ul>
-**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released|<ul> <li>NATO</li><li>FVEY</li><li>NOFORN</li><li>Public Release</li><li>None</li></ul>
+**Classification** | The U.S. Federal Government security classification level of the attribute| -Unclassified <br> -Controlled Unclassified <br> -Confidential <br> -Secret <br> -Top Secret
+**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released|- NATO <br> -FVEY <br> -NOFORN <br> -Public Release <br> -None
 
 
 
