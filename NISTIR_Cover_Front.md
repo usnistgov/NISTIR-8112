@@ -163,11 +163,11 @@ This document defines a set of optional elements to support cross-organization c
 
 * **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
 
-<div class="text-right" markdown="1">
+
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value.<br>| <ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul>
+**Verifier** |The entity that verified the attribute's value.<br>| <div class="text-right" markdown="1"><ul><li>Origin</li><li>Provider</li><li>Not Verified</li></ul></div>
 **Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| <ul><li>Document Verification</li><li>Record Verification</li><li>Document Verification with Record Verification</li><li> Proof of Possession</li><li>Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
