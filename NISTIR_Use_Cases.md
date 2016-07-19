@@ -51,7 +51,7 @@ Based on the scenario’s authorization and privacy considerations, the table be
 Attribute and metadata names, and valid values, are fictional.  These will ultimately depend on the technologies of the attribute sources that is being queried to evaluate policy.  URI's and namespaces, in some cases, have been removed for brevity.
 
 
-~~~
+~~~xml
   <xacml3:Policy Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides" PolicyId="http://www.axiomatics.com/automatic-unique-id/50f5b25e-dc7f-4672-a673-1a482e53f023">
     <xacml3:Description>Use Case #1</xacml3:Description>
 	<xacml3:PolicyDefaults><xacml3:XPathVersion>http://www.w3.org/TR/1999/REC-xpath-19991116</xacml3:XPathVersion></xacml3:PolicyDefaults>
