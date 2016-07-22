@@ -9,9 +9,8 @@ description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 
 </section>
 
-**_Under Development_**
 
-Welcome to the NIST IR 8112 Public Draft!  We're excited to share  this document and collaboratively enhance and evolve this IR.
+Welcome to the NIST IR 8112 Public Draft!  We're excited to share  this publication and collaboratively enhance it openly with our stakeholder community.
 
 Click [here](NISTIR-8112.html) to access the document.
 
