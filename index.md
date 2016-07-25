@@ -12,7 +12,7 @@ description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 
 Welcome to the NIST IR 8112 Public Draft!  We're excited to share  this publication and collaboratively enhance it openly with our stakeholder community.
 
-Click [here](NISTIR-8112.html) to access the document.
+*Click [here](NISTIR-8112.html) to access the document.*  
 
 ## Note to Reviewers
 
