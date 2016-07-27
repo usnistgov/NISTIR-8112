@@ -171,12 +171,12 @@ The schema in this document is intended to demonstrate the value of attribute an
 ## Table of Contents
 
 
-[1. Introduction](NISTIR Intro.md)
+[1. Introduction](NISTIR_Intro.md)
 
-[2. Definitions and Acronyms](NISTIR Abbreviations and Definitions.md)
+[2. Definitions and Acronyms](NISTIR_Abb_Definitions.md)
 
-[3. Metadata](NISTIR Metadata.md)
+[3. Metadata](NISTIR_Metadata.md)
 
-[4. Use Cases](NISTIR Use Cases.md)
+[4. Use Cases](NISTIR_Use_Cases.md)
 
 [5. References](references.md)
