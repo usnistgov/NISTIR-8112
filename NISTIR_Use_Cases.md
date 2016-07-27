@@ -1,3 +1,5 @@
+<a name="sec3"></a>
+
 ## 4. Use Cases
 
 This section details three use cases as a means of demonstrating the ways in which attribute metadata and attribute value metadata can be leveraged to enrich authorization decisions, facilitate cross boundary interoperability and trust, and enable adoption of federated attributes. Each use case carries with it a set of authorization and privacy considerations as well as suggested metadata necessary to fulfill evaluation of the requisite authorization policy, as well as an example of what an attribute value metadata assertion may look like.
