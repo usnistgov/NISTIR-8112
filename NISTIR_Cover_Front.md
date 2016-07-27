@@ -149,8 +149,8 @@ This document defines a set of optional elements to support cross-organization c
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified</li></ul>
-**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> - Proof of Possession <br> -Not Verified
+**Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified
+**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> -Proof of Possession <br> -Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
 **Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual.|No restrictions
