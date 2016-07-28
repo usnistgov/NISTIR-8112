@@ -276,11 +276,11 @@ Based on the scenario’s authorization and privacy considerations, the table be
 
 |**Element**  |**Value** |
 |--------|----------|------|
-| **Verifier** | **Origin– ** The statuses and verification dates for both Sworn LEO and CJIS Privacy Training would be verified by the originating entity (LAPD) |  
+| **Verifier** | **Origin–** The statuses and verification dates for both Sworn LEO and CJIS Privacy Training would be verified by the originating entity (LAPD) |  
 | **Last Verification (Sworn LEO)** |	**6/15/16** |
 | **Last Verification (CJIS Privacy Training)** |	**6/1/15** |
 | **Origin (both)** | **Los Angeles Police Department** |
-|**Pedigree (both)**| **Authoritative– ** The attribute’s value was generated and in this case asserted as well by the authoritative source.|
+|**Pedigree (both)**| **Authoritative–** The attribute’s value was generated and in this case asserted as well by the authoritative source.|
 
 Based on information about the user sent to the FBI by the LAPD IDP, the user is a Sworn LEO and has been verified as such within the last month (6/15/16). The user has also completed CJIS Privacy Training. However, the last verified date for the CJIS Privacy Training value was 13 months ago (6/1/15). In accordance with policy and based on interrogation of attribute value metadata, Claude is denied access based on the amount of time since the value for CJIS Privacy Training was verified. Here, the FBI has maintained its policy that simply taking the CJIS Privacy Training is not enough; it must have also been completed and verified within the last year as well. Similar to the “Federated Access to Classified Document in an Information Sharing Environment” example, the inclusion of attribute value metadata allows for more informed and fine grained access control decisions than in a traditional ABAC instance.
 
