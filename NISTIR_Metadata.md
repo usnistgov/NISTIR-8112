@@ -176,7 +176,7 @@ RPs may have specific legal, policy, or business requirements regarding whether 
 1. **No-** The individual has not expressly consented to the release of the attribute's value.
 1. **Unknown-** It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
 
-###### Date Consented
+##### Date Consented
 
 In addition to requiring information around whether the individual has consented to release of the attribute value, some RPs may wish to understand when that consent was received. Individual sentiments towards privacy and specific pieces of data may change over time. As a result, organizations may wish to employ the `date consented` metadata element when leveraging an attribute value in an access or eligibility decision.
 
