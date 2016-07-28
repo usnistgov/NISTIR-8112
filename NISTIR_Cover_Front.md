@@ -6,7 +6,8 @@
 
 Paul A. Grassi  
 Ellen M. Nadeau  
-Ryan J. Galluzzo  
+Ryan J. Galluzzo
+Abhiraj T. Dinh
 
 {::comment}
 
@@ -27,7 +28,8 @@ Ellen M. Nadeau
 *Applied CyberSecurity Division  
 Information Technology Laboratory*
 
-Ryan J. Galluzzo  
+Ryan J. Galluzzo
+Abhiraj T. Dinh
 *Deloitte & Touche LLP  
 Rosslyn, VA*
 
@@ -134,7 +136,7 @@ This NIST IR proposes a schema for attribute metadata and attribute value metada
 
 This document defines a set of optional elements to support cross-organization confidence in attribute assertions as well as the semantics and syntax required to support interoperability. The schema contains two core components, `attribute metadata` and `attribute value metadata` which, along with their suggested elements, are described below:
 
-* **Attribute Metadata** – Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
+* **Attribute Metadata** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
 | ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
