@@ -33,7 +33,7 @@ The `description` metadata element ensures that all entities participating in th
 
 This metadata element provides a common, agreed-to set of values for an attribute. This ensures that when an attribute provider transmits the attribute, the receiving organization is able to appropriately process the values. Variations between provider and RP in expressing values for an attribute—for example, a value outside of an expected range—adversely impact interoperability and performance of authorization activities. For this reason, resolution of this metadata element is highly recommended.
 
-#### 3.1.3 Format
+#### 3.1.3. Format
 
 This metadata element describes the format for expressing attribute's value. For example, the attribute `height` may always be expressed in meters rather than centimeters. As with `allowed values`, up front agreement around the format of expressed attributes supports technical interoperability of assertions during run time as well as appropriate policy evaluation of the attributes when determining access to resources.
 
