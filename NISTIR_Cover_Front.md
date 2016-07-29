@@ -7,7 +7,6 @@
 Paul A. Grassi  
 Ellen M. Nadeau  
 Ryan J. Galluzzo
-
 Abhiraj T. Dinh
 
 {::comment}
@@ -32,6 +31,7 @@ Information Technology Laboratory*
 Ryan J. Galluzzo
 
 Abhiraj T. Dinh
+
 *Deloitte & Touche LLP  
 Rosslyn, VA*
 
