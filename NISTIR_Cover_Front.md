@@ -109,13 +109,13 @@ Access control, assertions, attributes, attribute metadata, attribute values, at
 ### Acknowledgements
 The authors would like to thank Josh Freedman for his significant contributions to this report, as well as Sean Brooks and Naomi Lefkovitz for their considerate inclusion of privacy related content.  In addition, we would like to thank Anil John and the Federal Identity, Credential, and Access Management (FICAM) Attribute Tiger Team for their leadership in developing the initial set of attribute metadata necessary for federal systems. Finally, we express significant gratitude to Darran Rolls of SailPoint Technologies, Inc., as well as Gerry Gebel and David Brossard of Axiomatics, for their insightful review of this report.
 
+{::comment}
+
 ### Audience
 
 ### Compliance with NIST Standards and Guidelines
 
 ### Conformance Testing
-
-{::comment}
 
 ### Note to Reviewers
 
