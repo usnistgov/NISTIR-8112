@@ -10,4 +10,9 @@
 
 <a name="SP 800-63-3"></a>[SP 800-63-3] DRAFT NIST Special Publication 800-63-3, *Digital Authentication Guideline*, May, 2016, available at: https://pages.nist.gov/800-63-3
 
+<a name="OIX Attribute Exchange Trust Framework Specification"></a>[OIX Attribute Exchange Trust Framework] The Open Identity Exchange, Attribute Exchange Trust Framework Specification: Technical Specification V1. July 02, 2013. Available at: 
+http://openidentityexchange.org/wp-content/uploads/2014/06/OIX-AXN-Trust-Framework-Specification-1.0-7-5-2013.pdf
+
 <a name="OMB A-130"></a>[OMB A-130] OMB Circular A-130, *Management of Federal Information Resources*, November, 28 2000, available at: https://www.whitehouse.gov/omb/circulars_a130_a130trans4/
+
+
