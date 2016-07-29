@@ -6,8 +6,7 @@
 
 Paul A. Grassi  
 Ellen M. Nadeau  
-Ryan J. Galluzzo 
-
+Ryan J. Galluzzo   
 Abhiraj T. Dinh
 
 {::comment}
@@ -29,10 +28,8 @@ Ellen M. Nadeau
 *Applied CyberSecurity Division  
 Information Technology Laboratory*
 
-Ryan J. Galluzzo
-
-Abhiraj T. Dinh
-
+Ryan J. Galluzzo  
+Abhiraj T. Dinh  
 *Deloitte & Touche LLP  
 Rosslyn, VA*
 
