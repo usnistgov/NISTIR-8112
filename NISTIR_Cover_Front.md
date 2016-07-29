@@ -78,7 +78,7 @@ All comments are subject to release under the Freedom of Information Act (FOIA).
 National Institute of Standards and Technology  
 Attn: Applied Cybersecurity Division, Information Technology Laboratory  
 100 Bureau Drive (Mail Stop 2000) Gaithersburg, MD 20899-8930  
-Email: <nsticwks@nist.gov>
+Email: <nsticworkshop@nist.gov>
 
 
 ### Reports on Computer Systems Technology
