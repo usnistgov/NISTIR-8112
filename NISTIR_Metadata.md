@@ -172,9 +172,9 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 RPs may have specific legal, policy, or business requirements regarding whether a user consented to the release of a specific attribute. This element enables organizations to meet those requirements, ensuring that they’ve gained express consent from an individual. Recommended values include:
 
-1. **Yes-** The individual expressly consented to the release of the attribute's value for the purposes of the transaction.
-1. **No-** The individual has not expressly consented to the release of the attribute's value.
-1. **Unknown-** It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
+1. **Yes** - The individual expressly consented to the release of the attribute's value for the purposes of the transaction.
+1. **No** - The individual has not expressly consented to the release of the attribute's value.
+1. **Unknown** - It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
 
 ##### Date Consented
 
@@ -184,9 +184,9 @@ In addition to requiring information around whether the individual has consented
 
 This explains to RPs what business cases the metadata can be used to support according to policy restrictions conveyed by the AP. For example, the attribute value might purely be useful in authorization, determining a user’s eligibility for services; alternatively, values might be eligible for use beyond the initially intended purpose, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Recommended values for this element include:
 
-1. **Authorization-** The attribute value can be used to determine user eligibility for services or privileges and can be used to provide those services.
-1. **Secondary Use-** The attribute value may be used for purposes beyond that for which they were initially divulged. Additional use requires separate, explicit consent from user at initiation.
-1. **No Further Disclosure–** The attribute value should not be passed on to other parties for any purpose unless required by law.
+1. **Authorization** - The attribute value can be used to determine user eligibility for services or privileges and can be used to provide those services.
+1. **Secondary Use** - The attribute value may be used for purposes beyond that for which they were initially divulged. Additional use requires separate, explicit consent from user at initiation.
+1. **No Further Disclosure** - The attribute value should not be passed on to other parties for any purpose unless required by law.
 
 
 ##### Cache Time to Live
@@ -212,12 +212,12 @@ This refers to long-term holding of attribute values. Minimizing data, and indic
 
 Making certain attribute values available to RPs can carry national security implications. In situations where this may be the case, identification of such attribute values at the time of exchange can be absolutely crucial to ensuring that they are appropriately handled and protected across the attribute's lifecycle. The recommended values for use in this schema are:
 
-1. **Unclassified-** Unclassified attribute values are those that carry with them no national security implications. This does not, however, indicate that they are not sensitive, not in need of specific protections, or available publicly.
-1. **Controlled Unclassified-** These attribute values are not sensitive enough to have a negative impact on national security, but are none the less sensitive enough that they should be protected from improper access or exposure (e.g., FOUO information).
-1. **Confidential-** Attribute values, which if subject to unauthorized disclosure, could be expected to cause damage to national security.
-1. **Secret-** Attribute values, which if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
-1. **Top Secret-** Attribute values, which if subject to unauthorized disclosure could be expected to cause exceptionally grave damage to national security.
-1. **Company Confidential-** Attribute values which, if released, may cause damage to the organization that produced, generated, or maintains the values and/or its employees. For example the professional title or specialization of a specific employee, if exposed, may inadvertently reveal information about a sensitive company project.  
+1. **Unclassified** - Unclassified attribute values are those that carry with them no national security implications. This does not, however, indicate that they are not sensitive, not in need of specific protections, or available publicly.
+1. **Controlled Unclassified** - These attribute values are not sensitive enough to have a negative impact on national security, but are none the less sensitive enough that they should be protected from improper access or exposure (e.g., FOUO information).
+1. **Confidential** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause damage to national security.
+1. **Secret** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
+1. **Top Secret** - Attribute values, which if subject to unauthorized disclosure could be expected to cause exceptionally grave damage to national security.
+1. **Company Confidential** - Attribute values which, if released, may cause damage to the organization that produced, generated, or maintains the values and/or its employees. For example the professional title or specialization of a specific employee, if exposed, may inadvertently reveal information about a sensitive company project.  
 
 As with all classified information, the determination of the classification level for any attribute must be made by the appropriate U.S. Federal Government authority and the integrity of this classification must be maintained as the attribute and its values are transmitted or stored in by IT systems.
 
@@ -225,10 +225,10 @@ As with all classified information, the determination of the classification leve
 
 Refers to restrictions that may be placed on the releaseability of an attribute's value. The recommended values for this element include:
 
-1. **NATO-** The attribute's value is releasable to NATO allies only and should not be distributed to other foreign nationals.
-2. **NOFORN-** The attribute's value is not releasable to any foreign nationals.
-3. **FVEY-** The attribute's value is releasable to Five Eye nations only.
-1. **Public Release-** The attribute's value is explicitly approved for public release.
-1. **Externally Releasable for Business Purposes-** The attribute's value has been explicitly approved for release to parties externally, but for approved business purposes only. For example, this may be leveraged by an entity to approve the release or attribute values as part of a federated environment supporting their supply chain.
-1. **Do Not Release-** The attribute's value has not been approved for release beyond the originating organization.
-4. **None-** There are no distribution or release caveats associated with the attribute's value. This, however, does not mean that the attribute value may be freely distributed.
+1. **NATO** - The attribute's value is releasable to NATO allies only and should not be distributed to other foreign nationals.
+2. **NOFORN** - The attribute's value is not releasable to any foreign nationals.
+3. **FVEY** - The attribute's value is releasable to Five Eye nations only.
+1. **Public Release** - The attribute's value is explicitly approved for public release.
+1. **Externally Releasable for Business Purposes** - The attribute's value has been explicitly approved for release to parties externally, but for approved business purposes only. For example, this may be leveraged by an entity to approve the release or attribute values as part of a federated environment supporting their supply chain.
+1. **Do Not Release** - The attribute's value has not been approved for release beyond the originating organization.
+4. **None** - There are no distribution or release caveats associated with the attribute's value. This, however, does not mean that the attribute value may be freely distributed.
