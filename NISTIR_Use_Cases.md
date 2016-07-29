@@ -1,3 +1,5 @@
+<a name="sec4"></a>
+
 ## 4. Use Cases
 
 This section details three use cases as a means of demonstrating the ways in which attribute metadata and attribute value metadata can be leveraged to enrich authorization decisions, facilitate cross boundary interoperability and trust, and enable adoption of federated attributes. Each use case carries with it a set of authorization and privacy considerations as well as suggested metadata necessary to fulfill evaluation of the requisite authorization policy, as well as an example of what an attribute value metadata assertion may look like.
@@ -40,11 +42,11 @@ Based on the scenario’s authorization and privacy considerations, the table be
 
 |**Element**  |**Value** |
 |--------|----------|------|
-| **Verifier** | **Origin-** The clearance was verified by the originating entity—which in this case is the same as the provider|  
-| **Verification Method**| **Record Check-** The attribute value was verified against the sponsoring agency's clearance database|
+| **Verifier** | **Origin** - The clearance was verified by the originating entity—which in this case is the same as the provider|  
+| **Verification Method**| **Record Check** - The attribute value was verified against the sponsoring agency's clearance database|
 | **Last Verification** |	**6/10/16** (assume an access request date of 7/1/2016)|
 | **Origin** | **United States Army** |
-|**Pedigree**| **Authoritative-** The attribute’s value was generated and in this case asserted as well by the authoritative source|
+|**Pedigree**| **Authoritative** - The attribute’s value was generated and in this case asserted as well by the authoritative source|
 
 #### XACML Example Policy
 
@@ -187,9 +189,9 @@ Based on the scenario’s authorization and privacy considerations, the table be
 
 |**Element**  |**Value** |
 |--------|----------|------|
-| **Verifier** | **Provider-** The clearance was verified by the IDP (also acting as the AP in this instance)|  
-| **Verification Method**| **Document verification with Record Check-** The attribute value was verified against a DD-214 provided by Jane and was checked against a National Archives and Records Administration database|
-|**Individual Consented**| **Yes-** The provider gained Jane's consent before releasing veteran status or any other attribute values|
+| **Verifier** | **Provider** - The clearance was verified by the IDP (also acting as the AP in this instance)|  
+| **Verification Method**| **Document verification with Record Check** - The attribute value was verified against a DD-214 provided by Jane and was checked against a National Archives and Records Administration database|
+|**Individual Consented**| **Yes** - The provider gained Jane's consent before releasing veteran status or any other attribute values|
 
 #### XACML Example Policy
 
@@ -274,11 +276,11 @@ Based on the scenario’s authorization and privacy considerations, the table be
 
 |**Element**  |**Value** |
 |--------|----------|------|
-| **Verifier** | **Origin –** The statuses and verification dates for both Sworn LEO and CJIS Privacy Training would be verified by the originating entity (LAPD) |  
+| **Verifier** | **Origin** - The statuses and verification dates for both Sworn LEO and CJIS Privacy Training would be verified by the originating entity (LAPD) |  
 | **Last Verification (Sworn LEO)** |	**6/15/16** |
 | **Last Verification (CJIS Privacy Training)** |	**6/1/15** |
 | **Origin (both)** | **Los Angeles Police Department** |
-|**Pedigree (both)**| **Authoritative –** The attribute’s value was generated and in this case asserted as well by the authoritative source.|
+|**Pedigree (both)**| **Authoritative** - The attribute’s value was generated and in this case asserted as well by the authoritative source.|
 
 Based on information about the user sent to the FBI by the LAPD IDP, the user is a Sworn LEO and has been verified as such within the last month (6/15/16). The user has also completed CJIS Privacy Training. However, the last verified date for the CJIS Privacy Training value was 13 months ago (6/1/15). In accordance with policy and based on interrogation of attribute value metadata, Claude is denied access based on the amount of time since the value for CJIS Privacy Training was verified. Here, the FBI has maintained its policy that simply taking the CJIS Privacy Training is not enough; it must have also been completed and verified within the last year as well. Similar to the “Federated Access to Classified Document in an Information Sharing Environment” example, the inclusion of attribute value metadata allows for more informed and fine grained access control decisions than in a traditional ABAC instance.
 

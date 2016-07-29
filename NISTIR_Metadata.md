@@ -1,3 +1,5 @@
+<a name="sec3"></a>
+
 ## 3. Metadata
 
 The term *attribute* is used throughout this document to refer to a defined characteristic of an individual — often referred to as subject attributes. *Home address* is one example of an attribute of a person. The term *attribute value* is used throughout to refer to a specifically assigned value for an attribute; for example, Jane Doe's *home address* is *1 Main St., Anytown, VA 11111*. Attribute providers collect and maintain these elements—the attribute and its value—together. In a federated environment, these attributes are asserted to the relying party (RP) to support the provision of a benefit or service, or when authorizing access to a protected resource. Attributes and attribute values may also be associated with devices or non-person entities; however, these entities are not addressed in this document.
@@ -31,7 +33,7 @@ The `description` metadata element ensures that all entities participating in th
 
 This metadata element provides a common, agreed-to set of values for an attribute. This ensures that when an attribute provider transmits the attribute, the receiving organization is able to appropriately process the values. Variations between provider and RP in expressing values for an attribute—for example, a value outside of an expected range—adversely impact interoperability and performance of authorization activities. For this reason, resolution of this metadata element is highly recommended.
 
-#### 3.1.3 Format
+#### 3.1.3. Format
 
 This metadata element describes the format for expressing attribute's value. For example, the attribute `height` may always be expressed in meters rather than centimeters. As with `allowed values`, up front agreement around the format of expressed attributes supports technical interoperability of assertions during run time as well as appropriate policy evaluation of the attributes when determining access to resources.
 
@@ -43,7 +45,7 @@ In most situations, it is highly beneficial for the RP and the AP to agree to se
 
 While attribute metadata are important, it is the granular attribute *value* metadata—for example, information about attribute values' authoritativeness, the processes used to create or establish them, and the frequency with which they are refreshed—that is designed to enable greater trust across systems. RPs can establish semantics and syntax of attribute value metadata at trust time in order to make authorization decisions about access to resources or benefits at run-time. Regardless of the access control methodology leveraged by an organization, integrating attribute value metadata into decision support systems can enable more informed decisions and support richer policy development.
 
-### 3.2.1. Metadata Categories
+#### 3.2.1. Metadata Categories
 
 While attribute value metadata may be used for many purposes by RPs, certain metadata elements are more commonly tied to specific types of decisions. To facilitate RP decision-making and increase interoperability, this schema establishes five categories based on common uses of metadata: *accuracy*, *currency*, *provenance*, *privacy*, and *classification*. Each category of metadata elements is important for enabling the federation of attributes across a community or environment. Metadata associated with *accuracy*, *currency*, and *provenance* may facilitate cross-system trust by establishing a consistent picture of the attribute value itself and the practices that generated that value, while *privacy* and *classification* can be leveraged to convey specific restrictions and protections that may need to be put in place based on certain data types, transactions, or use cases. [Table 2](#table2) presents the five categories and their definitions. [Table 3](#table3) provides a breakdown of the number of metadata elements by category.
 
@@ -170,11 +172,11 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 RPs may have specific legal, policy, or business requirements regarding whether a user consented to the release of a specific attribute. This element enables organizations to meet those requirements, ensuring that they’ve gained express consent from an individual. Recommended values include:
 
-1. **Yes-** The individual expressly consented to the release of the attribute's value for the purposes of the transaction.
-1. **No-** The individual has not expressly consented to the release of the attribute's value.
-1. **Unknown-** It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
+1. **Yes** - The individual expressly consented to the release of the attribute's value for the purposes of the transaction.
+1. **No** - The individual has not expressly consented to the release of the attribute's value.
+1. **Unknown** - It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
 
-#### Date Consented
+##### Date Consented
 
 In addition to requiring information around whether the individual has consented to release of the attribute value, some RPs may wish to understand when that consent was received. Individual sentiments towards privacy and specific pieces of data may change over time. As a result, organizations may wish to employ the `date consented` metadata element when leveraging an attribute value in an access or eligibility decision.
 
@@ -183,8 +185,8 @@ In addition to requiring information around whether the individual has consented
 This explains to RPs what business cases the metadata can be used to support according to policy restrictions conveyed by the AP. For example, the attribute value might purely be useful in authorization, determining a user’s eligibility for services; alternatively, values might be eligible for use beyond the initially intended purpose, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Recommended values for this element include:
 
 1. **Authorization** - The attribute value can be used to determine user eligibility for services or privileges and can be used to provide those services.
-1. **Secondary Use –** The attribute value may be used for purposes beyond that for which they were initially divulged. Additional use requires separate, explicit consent from user at initiation.
-1. **No Further Disclosure –** The attribute value should not be passed on to other parties for any purpose unless required by law.
+1. **Secondary Use** - The attribute value may be used for purposes beyond that for which they were initially divulged. Additional use requires separate, explicit consent from user at initiation.
+1. **No Further Disclosure** - The attribute value should not be passed on to other parties for any purpose unless required by law.
 
 
 ##### Cache Time to Live
@@ -215,7 +217,7 @@ Making certain attribute values available to RPs can carry national security imp
 1. **Confidential** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause damage to national security.
 1. **Secret** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
 1. **Top Secret** - Attribute values, which if subject to unauthorized disclosure could be expected to cause exceptionally grave damage to national security.
-1. **Company Confidential**- Attribute values which, if released, may cause damage to the organization that produced, generated, or maintains the values and/or its employees. For example the professional title or specialization of a specific employee, if exposed, may inadvertently reveal information about a sensitive company project.  
+1. **Company Confidential** - Attribute values which, if released, may cause damage to the organization that produced, generated, or maintains the values and/or its employees. For example the professional title or specialization of a specific employee, if exposed, may inadvertently reveal information about a sensitive company project.  
 
 As with all classified information, the determination of the classification level for any attribute must be made by the appropriate U.S. Federal Government authority and the integrity of this classification must be maintained as the attribute and its values are transmitted or stored in by IT systems.
 
@@ -226,7 +228,7 @@ Refers to restrictions that may be placed on the releaseability of an attribute'
 1. **NATO** - The attribute's value is releasable to NATO allies only and should not be distributed to other foreign nationals.
 2. **NOFORN** - The attribute's value is not releasable to any foreign nationals.
 3. **FVEY** - The attribute's value is releasable to Five Eye nations only.
-1. **Public Release**- The attribute's value is explicitly approved for public release.
-1. **Externally Releasable for Business Purposes**- The attribute's value has been explicitly approved for release to parties externally, but for approved business purposes only. For example, this may be leveraged by an entity to approve the release or attribute values as part of a federated environment supporting their supply chain.
-1. **Do Not Release**- The attribute's value has not been approved for release beyond the originating organization.
+1. **Public Release** - The attribute's value is explicitly approved for public release.
+1. **Externally Releasable for Business Purposes** - The attribute's value has been explicitly approved for release to parties externally, but for approved business purposes only. For example, this may be leveraged by an entity to approve the release or attribute values as part of a federated environment supporting their supply chain.
+1. **Do Not Release** - The attribute's value has not been approved for release beyond the originating organization.
 4. **None** - There are no distribution or release caveats associated with the attribute's value. This, however, does not mean that the attribute value may be freely distributed.

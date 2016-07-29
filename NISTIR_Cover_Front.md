@@ -6,7 +6,9 @@
 
 Paul A. Grassi  
 Ellen M. Nadeau  
-Ryan J. Galluzzo  
+Ryan J. Galluzzo 
+
+Abhiraj T. Dinh
 
 {::comment}
 
@@ -27,7 +29,10 @@ Ellen M. Nadeau
 *Applied CyberSecurity Division  
 Information Technology Laboratory*
 
-Ryan J. Galluzzo  
+Ryan J. Galluzzo
+
+Abhiraj T. Dinh
+
 *Deloitte & Touche LLP  
 Rosslyn, VA*
 
@@ -53,12 +58,6 @@ Technology and Director*
 
 <div class="text-center" markdown="1">
 
-### Authority
-This publication has been developed by NIST in accordance with its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3541 et seq., Public Law  (P.L.) 113-283. NIST is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems, but such standards and guidelines shall not apply to national security systems without the express approval of appropriate federal officials exercising policy authority over such systems. This guideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130.
-
-Nothing in this publication should be taken to contradict the standards and guidelines made mandatory and binding on Federal agencies by the Secretary of Commerce under statutory authority. Nor should these guidelines be interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or any other Federal official. This publication may be used by nongovernmental organizations on a voluntary basis and is not subject to copyright in the United States. Attribution would, however, be appreciated by NIST.
-
-
 National Institute of Standards and Technology Special Publication 800-63-3  
 Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD 2016)  
 CODEN: NSPUE2
@@ -74,8 +73,6 @@ http://dx.doi.org/10.6028/NIST.SP.XXX
 >Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.
 There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.
 Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).  
-
-
 
 **Comments on this publication may be submitted to: <nsticwks@nist.gov>**  
 Public comment period: Month Day, YYYY through Month Day, YYYY**  
@@ -112,31 +109,21 @@ Access control, assertions, attributes, attribute metadata, attribute values, at
 ### Acknowledgements
 The authors would like to thank Josh Freedman for his significant contributions to this report, as well as Sean Brooks and Naomi Lefkovitz for their considerate inclusion of privacy related content.  In addition, we would like to thank Anil John and the Federal Identity, Credential, and Access Management (FICAM) Attribute Tiger Team for their leadership in developing the initial set of attribute metadata necessary for federal systems. Finally, we express significant gratitude to Darran Rolls of SailPoint Technologies, Inc., as well as Gerry Gebel and David Brossard of Axiomatics, for their insightful review of this report.
 
+{::comment}
+
 ### Audience
 
 ### Compliance with NIST Standards and Guidelines
 
 ### Conformance Testing
 
-{::comment}
-
 ### Note to Reviewers
 
 ### Note to Readers
 
-{:/comment}
-
 ### Trademark Information
 
-### Requirements Notation and Conventions
-
-The terms “SHALL” and “SHALL NOT” indicate requirements to be followed strictly in order to conform to the publication and from which no deviation is permitted.
-
-The terms “SHOULD” and “SHOULD NOT” indicate that, among several possibilities, one is recommended as particularly suitable, without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited.
-
-The terms “MAY” and “NEED NOT” indicate a course of action permissible within the limits of the publication.
-
-The terms “CAN” and “CANNOT” indicate a possibility and capability, whether material, physical or causal.
+{:/comment}
 
 </div>
 
@@ -152,7 +139,7 @@ This NIST IR proposes a schema for attribute metadata and attribute value metada
 
 This document defines a set of optional elements to support cross-organization confidence in attribute assertions as well as the semantics and syntax required to support interoperability. The schema contains two core components, `attribute metadata` and `attribute value metadata` which, along with their suggested elements, are described below:
 
-* **Attribute Metadata** – Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
+* **Attribute Metadata** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
 | ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
@@ -167,8 +154,8 @@ This document defines a set of optional elements to support cross-organization c
 
 **Metadata Element**|**Description**|**Values**
 --------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified</li></ul>
-**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> - Proof of Possession <br> -Not Verified
+**Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified
+**Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> -Proof of Possession <br> -Not Verified
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
 **Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual.|No restrictions
@@ -189,12 +176,12 @@ The schema in this document is intended to demonstrate the value of attribute an
 ## Table of Contents
 
 
-[1. Introduction](NISTIR Intro.md)
+[1. Introduction](#sec1)
 
-[2. Definitions and Acronyms](NISTIR Abbreviations and Definitions.md)
+[2. Definitions and Acronyms](#sec2)
 
-[3. Metadata](NISTIR Metadata.md)
+[3. Metadata](#sec3)
 
-[4. Use Cases](NISTIR Use Cases.md)
+[4. Use Cases](#sec4)
 
-[5. References](references.md)
+[5. References](#sec5)
