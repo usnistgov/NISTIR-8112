@@ -121,9 +121,9 @@ The authors would like to thank Josh Freedman for his significant contributions 
 
 ### Note to Readers
 
-{:/comment}
-
 ### Trademark Information
+
+{:/comment}
 
 </div>
 
