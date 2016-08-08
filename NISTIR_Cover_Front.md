@@ -153,11 +153,11 @@ This document defines a set of optional elements to support cross-organization c
 --------------------|--------------|------------
 **Verifier** |The entity that verified the attribute's value.<br>| -Origin <br> -Provider <br> -Not Verified
 **Verification Method** |The method by which the attribute value was verified as true, and belonging to the specific individual.| -Document Verification <br> -Record Verification <br> -Document Verification with Record Verification <br> -Proof of Possession <br> -Not Verified
+**Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual.|No restrictions
 **Last Update** |The date and time when the attribute was last updated. |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid.|No restrictions
-**Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual.|No restrictions
-**Origin** |The legal name of the entity that issues or creates the initial attribute value.| -Origin's name <br> -None
-**Provider** |The legal name of the entity that is providing the attribute.|-Provider's Name <br> -None
+**Origin** |The name of the entity that issues or creates the initial attribute value.| -Origin's name <br> -None
+**Provider** |The name of the entity that is providing the attribute.|-Provider's Name <br> -None
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| -Authoritative <br> -Sourced <br> -Self-Asserted <br> -Derived
 **Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| -Yes <br> -No <br> -Unknown
 **Date Consented** | The date on which express consent for release of the attribute value was acquired. | No restrictions
