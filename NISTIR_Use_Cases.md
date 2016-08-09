@@ -14,15 +14,15 @@ The use cases are:
 
 #### Overview
 
-Monique, an Army employee with a current TS-SCI clearance, attempts to access an information system that stores classified information, hosted on a shared Secure Internet Protocol Router Network (SIPRNet) site by the Air Force. Furthermore, the system, due to its sensitivity and the number of possible individuals that have legitimate need to access it, is protected using Attribute Based Access Control (ABAC) principles. ABAC evaluates access policy to enforce decisions based on attributes specific to the user and the resource (not addressed in the schema). When Monique attempts access to the resource, an attribute query is routed to her agency, the Army, to obtain the attributes needed to grant or deny access. The Army then asserts the requested set of attributes, which are evaluated against the access control policy of the Air Force hosted site so a decision can be made. While in an actual implementation there may be many different attributes required to access the protected resource, for the purposes of illustration, this use case will only focus on the *clearance* attribute. Furthermore, in this scenario it is assumed that the semantics and syntax associated with the attribute itself are established.
+Monique, an Army employee with a current Secret clearance, attempts to access an information system that stores classified information, hosted on a shared Secure Internet Protocol Router Network (SIPRNet) site by the Air Force. Furthermore, the system, due to its sensitivity and the number of possible individuals that have legitimate need to access it, is protected using Attribute Based Access Control (ABAC) principles. ABAC evaluates access policy to enforce decisions based on attributes specific to the user and the resource (not addressed in the schema). When Monique attempts access to the resource, an attribute query is routed to her agency, the Army, to obtain the attributes needed to grant or deny access. The Army then asserts the requested set of attributes, which are evaluated against the access control policy of the Air Force hosted site so a decision can be made. While in an actual implementation there may be many different attributes required to access the protected resource, for the purposes of illustration, this use case will only focus on the *clearance* attribute. Furthermore, in this scenario it is assumed that the semantics and syntax associated with the attribute itself are established.
 
 |**Attribute**                  |**Value**       |
 |---------------------------------------|----------------------|
-| Clearance | TS-SCI |
+| Clearance | Secret |
 
 #### Authorization Considerations
 
-In a traditional ABAC scenario, the assertion from the Army system would only provide the value that they maintain within their own records. As a result, the receiving agency’s access control system is only able to make a decision based upon the asserted attribute value and nothing more— i.e., the employee’s clearance is TS-SCI so therefore they are authorized for access. Information such as: how current the clearance is, when it was last verified by the asserting agency, and from where the value originated are not factored into the process. With the inclusion of attribute metadata, the relying agency is able to make an informed, risk-based decision by adding the evaluation of the attribute metadata into their ABAC policies. For example, they could determine that anyone accessing this specific resource must have a TS-SCI clearance that: originated from a DoD entity, has been verified in the last six months, and was verified by the providing entity against an authoritative database.
+In a traditional ABAC scenario, the assertion from the Army system would only provide the value that they maintain within their own records. As a result, the receiving agency’s access control system is only able to make a decision based upon the asserted attribute value and nothing more— i.e., the employee’s clearance is Secret so therefore they are authorized for access. Information such as: how current the clearance is, when it was last verified by the asserting agency, and from where the value originated are not factored into the process. With the inclusion of attribute metadata, the relying agency is able to make an informed, risk-based decision by adding the evaluation of the attribute metadata into their ABAC policies. For example, they could determine that anyone accessing this specific resource must have a Secret clearance that: originated from a DoD entity, has been verified in the last six months, and was verified by the providing entity against an authoritative database.
 
 |**Authorization Policy**|
 |-------------------------------|
@@ -64,7 +64,7 @@ Attribute and metadata names, and valid values, are fictional.  These will ultim
         <xacml3:AnyOf>
           <xacml3:AllOf>
             <xacml3:Match MatchId="urn:oasis:names:tc:xacml:3.0:function:string-equal-ignore-case">
-              <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">TS-SCI</xacml3:AttributeValue>
+              <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Secret</xacml3:AttributeValue>
               <xacml3:AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="clearance.value" MustBePresent="false" DataType="http://www.w3.org/2001/XMLSchema#string"/>
             </xacml3:Match>
           </xacml3:AllOf>
