@@ -112,7 +112,7 @@ This metadata element contains information on the process used to confirm that a
 
 ##### Last Verification
 
-RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain attribute values such as *security clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata focuses on the last date that verification occurred, and does not include any information about *methods* of verification.
+RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain values associated with attributes such as *Role* or *Security Clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata focuses on the last date that verification occurred, and does not include any information about *methods* of verification.
 
 ##### Last Refresh
 
