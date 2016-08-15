@@ -107,16 +107,16 @@ This metadata element contains information on the process used to confirm that a
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual|No restrictions
-**Last Update** |The date and time when the attribute was last updated |No restrictions
+**Last Refresh** |The date and time when the attribute was last refreshed |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid|No restrictions
 
 ##### Last Verification
 
 RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain attribute values such as *security clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata focuses on the last date that verification occurred, and does not include any information about *methods* of verification.
 
-##### Last Update
+##### Last Refresh
 
-`Last Update` contains information on the date and time when an attribute’s value was last refreshed. The age of the attribute can be derived from this attribute value. `Last Update` also allows RPs to determine the currency of the attribute value, and whether the attribute was refreshed recently enough to be used in a particular transaction.
+`Last Refresh` contains information on the date and time when an attribute’s value was last refreshed. The age of the attribute can be derived from this attribute value. `Last Refresh` also allows RPs to determine the currency of the attribute value, and whether the attribute was updated recently enough to be used in a particular transaction.  
 
 ##### Expiration Date
 
