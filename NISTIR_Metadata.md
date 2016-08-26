@@ -161,7 +161,8 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 --------------------|--------------|------------
 **Individual Consented** |Captures whether the user has expressly consented to providing the attribute value|-Yes <br> -No <br> -Unknown
 **Date Consented** | The date on which express consent for release of the attribute value was acquired| No restrictions
-**Acceptable Uses** |Allowed uses for entities that receive attributes| -Authorization <br> -Secondary Use <br> -No Further Disclosure
+**Acceptable Primary Uses** |Allowed primary uses for entities that receive attributes| No restrictions
+**Acceptable Additional Uses** |Allowed additional uses for entities that receive attributes| -Secondary Use <br> -No Further Disclosure
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date a certain attribute should be deleted from records| No restrictions
 
@@ -179,12 +180,15 @@ RPs may have specific legal, policy, or business requirements regarding whether 
 
 In addition to requiring information around whether the individual has consented to release of the attribute value, some RPs may wish to understand when that consent was received. Individual sentiments towards privacy and specific pieces of data may change over time. As a result, organizations may wish to employ the `date consented` metadata element when leveraging an attribute value in an access or eligibility decision.
 
-##### Acceptable Uses
+##### Acceptable Primary Uses
 
-This explains to RPs what business cases the metadata can be used to support according to policy restrictions conveyed by the AP. For example, the attribute value might purely be useful in authorization, determining a user’s eligibility for services; alternatively, values might be eligible for use beyond the initially intended purpose, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Recommended values for this element include:
+This explains to RPs what primary business cases the metadata can be used to support according to policy restrictions conveyed by the AP. For example, the attribute value might primarily be useful in authorization or determining a user’s eligibility for services.
 
-1. **Authorization** - The attribute value can be used to determine user eligibility for services or privileges and can be used to provide those services.
-1. **Secondary Use** - The attribute value may be used for purposes beyond that for which they were initially divulged. Additional use requires separate, explicit consent from user at initiation.
+##### Acceptable Additional Uses
+
+This explains to RPs what business cases, in addition to the primary uses, the metadata can be used to support according to policy restrictions conveyed by the AP. For example, values might be eligible for secondary uses beyond the initially intended purpose, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Recommended values for this element include:
+
+1. **Secondary Use** - The attribute value may be used for purposes beyond that for which they were initially divulged. Secondary use requires separate, explicit consent from user at initiation. Secondary uses may include, but are not limited to: payment for a service, quality analysis of a service, provider certification/accreditation, or marketing or other business or commercial use.
 1. **No Further Disclosure** - The attribute value should not be passed on to other parties for any purpose unless required by law.
 
 
