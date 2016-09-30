@@ -120,7 +120,7 @@ RPs may not trust certain attribute values unless they've been verified within a
 
 ##### Expiration Date
 
-Attribute values sent from an AP to an RP may only be valid for its defined use for a set amount of time, depending on requirements, policy, or legal factors. The date after which an attribute’s value is considered no longer valid for its defined use is the `Expiration Date`. Though `Expiration Date` and `Last Update` both allow an RP to determine if an attribute’s value is current and sufficient, `Expiration Date` differs from `Last Update` in that there is a specified date or threshold after which the attribute’s value becomes void for its defined use. RPs have the freedom to accept attributes after they have been considered expired for their original intended use, but this decision is made at their own discretion based upon the intended use of the attribute value, the type of interaction it is supporting, and the environment in which they operate. For example, an RP may choose to accept a recently expired driver’s license number for access to a low assurance service. However, it is unlikely that an agency would accept a lapsed security clearance for access to classified data.
+Attribute values sent from an AP to an RP may only be valid for its defined use for a set amount of time, depending on requirements, policy, or legal factors. The date after which an attribute’s value is considered no longer valid for its defined use is the `Expiration Date`. Though `Expiration Date` and `Last Refresh` both allow an RP to determine if an attribute’s value is current and sufficient, `Expiration Date` differs from `Last Refresh` in that there is a specified date or threshold after which the attribute’s value becomes void for its defined use. RPs have the freedom to accept attributes after they have been considered expired for their original intended use, but this decision is made at their own discretion based upon the intended use of the attribute value, the type of interaction it is supporting, and the environment in which they operate. For example, an RP may choose to accept a recently expired driver’s license number for access to a low assurance service. However, it is unlikely that an agency would accept a lapsed security clearance for access to classified data.
 
 #### 3.2.1.3. Provenance Metadata
 
@@ -207,7 +207,7 @@ This refers to long-term holding of attribute values. Minimizing data, and indic
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Classification** | The U.S. Federal Government security classification level of the attribute| -Unclassified <br> -Controlled Unclassified <br> -Confidential <br> -Secret <br> -Top Secret
-**Releasability** |  The U.S. Federal Government restrictions regarding to whom an attribute value may be released|- NATO <br> -FVEY <br> -NOFORN <br> -Public Release <br> -None
+**Releasability** |  The U.S. Federal Government restrictions on who may receive an attribute value|-NATO <br> -FVEY <br> -NOFORN <br> -Public Release <br> -None
 
 
 
