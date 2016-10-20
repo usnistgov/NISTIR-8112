@@ -12,7 +12,7 @@ Abhiraj T. Dinh
 {::comment}
 
 This publication is available free of charge from:
-http://dx.doi.org/10.6028/NIST.SP.XXX  
+https://doi.org/10.6028/NIST.SP.XXX  
 
 {:/comment}
 
@@ -36,7 +36,7 @@ Rosslyn, VA*
 {::comment}
 
 This publication is available free of charge from:
-http://dx.doi.org/10.6028/NIST.SP.XXX  
+https://doi.org/10.6028/NIST.SP.XXX  
 
 {:/comment}
 
@@ -63,7 +63,7 @@ CODEN: NSPUE2
 {::comment}
 
 This publication is available free of charge from:
-http://dx.doi.org/10.6028/NIST.SP.XXX  
+https://doi.org/10.6028/NIST.SP.XXX  
 
 {:/comment}
 
