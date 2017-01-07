@@ -1,5 +1,7 @@
 <a name="sec4"></a>
 
+<div class="breaker"/>
+
 ## 4. Use Cases
 
 This section details three use cases as a means of demonstrating the ways in which attribute metadata and attribute value metadata can be leveraged to enrich authorization decisions, facilitate cross boundary interoperability and trust, and enable adoption of federated attributes. Each use case carries with it a set of authorization and privacy considerations as well as suggested metadata necessary to fulfill evaluation of the requisite authorization policy, as well as an example of what an attribute value metadata assertion may look like.
@@ -177,7 +179,6 @@ For this transaction, the VA has identified the attribute *Veteran Status* as cr
 |-------------------------------|
 | 1. Veteran status must have been verified by the provider or the originating authority |
 | 2. Veteran status must have been verified through document verification and against an authoritative database |
-| 3. The Veteran must have consented to the release of their status |
 
 #### Privacy Considerations
 
@@ -191,7 +192,6 @@ Based on the scenario’s authorization and privacy considerations, the table be
 |--------|----------|------|
 | **Verifier** | **Provider** - The clearance was verified by the IDP (also acting as the AP in this instance)|  
 | **Verification Method**| **Document verification with Record Check** - The attribute value was verified against a DD-214 provided by Jane and was checked against a National Archives and Records Administration database|
-|**Individual Consented**| **Yes** - The provider gained Jane's consent before releasing veteran status or any other attribute values|
 
 #### XACML Example Policy
 
@@ -213,14 +213,6 @@ Attribute and metadata names, and valid values, are fictional.  These will ultim
           <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:boolean-equal">
             <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#boolean">true</xacml3:AttributeValue>
             <xacml3:AttributeDesignator Category="UC2" AttributeId="veteran.value" MustBePresent="false" DataType="http://www.w3.org/2001/XMLSchema#boolean"/>
-          </xacml3:Match>
-        </xacml3:AllOf>
-      </xacml3:AnyOf>
-      <xacml3:AnyOf>
-        <xacml3:AllOf>
-          <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:boolean-equal">
-            <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#boolean">true</xacml3:AttributeValue>
-            <xacml3:AttributeDesignator Category="UC2" AttributeId="veteran.individual_consented" MustBePresent="false" DataType="http://www.w3.org/2001/XMLSchema#boolean"/>
           </xacml3:Match>
         </xacml3:AllOf>
       </xacml3:AnyOf>
