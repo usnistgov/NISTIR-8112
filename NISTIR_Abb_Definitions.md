@@ -18,7 +18,7 @@ Access control based on attributes associated with subjects, objects, targets, i
 
 A statement asserting a property of a subject without necessarily containing authentication or other identity information, independent of format. For example, for the attribute 'birthday', a claim could be 'older than 18' or 'born in December'.
 
-#### Attribute Metadata
+#### Attribute Schema Metadata (ASM)
 
 Data providing information about the context and structure of an attribute. See metadata.
 
