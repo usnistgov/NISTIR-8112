@@ -25,7 +25,7 @@ A formal 60-day **(01 August 2016 - 30 September 2016)** comment period was prev
 - Is the body of attribute schema and attribute value metadata complete?  What is missing? What should be removed?
 - Is the categorization adequate and complete?  Did we miss anything that is critical to improve trust and confidence in decision making based on federated attributes?
 - Is trust-time vs. run-time sufficiently considered?  Should the defined attribute metadata be shifted among these two lifecycle phases?
-- Is the delineation between attribute and attribute value metadata clear and are both required in this schema?
+- Is the delineation between attribute schema and attribute value metadata clear and are both required in this schema?
 - Is level of effort required to integrate and leverage the schema commensurate with the value of the schema?
 - Does the addition of the metadata negatively impact performance of systems?
  
