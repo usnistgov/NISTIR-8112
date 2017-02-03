@@ -1,6 +1,6 @@
 ---
 layout: cover
-title: "NISTIR 8112 Attribute Metadata"
+title: "NISTIR 8112 A Proposed Schema for Enhancing Confidence in Federated Attributes"
 description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 ---
 <section class="home home-title" markdown="1">
@@ -10,19 +10,19 @@ description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 </section>
 
 
-Welcome to the NIST IR 8112 Public Draft!  We're excited to share  this publication and collaboratively enhance it openly with our stakeholder community.
+Welcome to the NIST IR 8112 Public Draft!  We're excited to share this publication and collaboratively enhance it openly with our stakeholder community.
 
 *Click [here](NISTIR-8112.html) to access the document.*  
 
 ## Note to Reviewers
 
-Feedback on any part of this publication is welcome and encouraged. We opted to publish this document as a NISTIR in an effort to treat it as an _implementers’ draft_, an approach common in the development lifecycle of many private sector standards and specifications. This allows the developer and policy community, in both the public and private sectors, to apply some or all of the metadata in this NISTIR on a volunteer basis, and provide us with practical feedback gained through implementation experience. 
+Feedback on any part of this publication is welcomed and encouraged. We opted to publish this document as a NISTIR in an effort to treat it as an _implementers’ draft_, an approach common in the development lifecycle of many private sector standards and specifications. This allows the developer and policy community, in both the public and private sectors, to apply some or all of the metadata in this NISTIR on a volunteer basis, and provide us with practical feedback gained through implementation experience. 
  
-There will be a formal 60-day **(01 August 2016 - 30 September 2016)** comment period to gain initial feedback on the document in order to finalize. However, we are also interested in the application of the NISTIR’s schema in actual solutions and implementations. As such, we will be maintaining this public page beyond the initial 60-day period to continually receive input and iteratively improve the document in anticipation of a second revision. Some specific questions we are interested in answering both in the short and long term include:
+A formal 60-day **(01 August 2016 - 30 September 2016)** comment period was previously held to gain initial feedback on the document in order to finalize. However, we are also interested in the application of the NISTIR’s schema in actual solutions and implementations, and are moving to finalize this NISTIR in order for the community to start implementing this guidance. Though this is a finalized NISTIR, this is considered an initial attempt at a schema that will require implementation feedback before being developed more fully. As such, we will be maintaining this public page beyond the initial 60-day period and the NISTIR's finalization to continually receive input and iteratively improve the document in anticipation of a second revision. Some specific questions we are interested in answering both in the short and long term include:
  
 - Does this bring value to federated scenarios and identity solutions?
 - Would your community or organization profile this schema to support a specific solution or sector?
-- Is the body of attribute and attribute value metadata complete?  What is missing? What should be removed?
+- Is the body of attribute schema and attribute value metadata complete?  What is missing? What should be removed?
 - Is the categorization adequate and complete?  Did we miss anything that is critical to improve trust and confidence in decision making based on federated attributes?
 - Is trust-time vs. run-time sufficiently considered?  Should the defined attribute metadata be shifted among these two lifecycle phases?
 - Is the delineation between attribute and attribute value metadata clear and are both required in this schema?
