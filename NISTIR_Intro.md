@@ -6,7 +6,7 @@ Access control policy increasingly depends on evaluating the attributes of the i
 
 ### 1.1.	Purpose
 
-This NISTIR proposes a schema for attribute metadata and attribute value metadata, intended to convey information about a subject's attribute(s) to allow for a relying party (RP) to:
+This NISTIR proposes attribute schema metadata and attribute value metadata as part of an overall schema intended to convey information about a subject's attribute(s) to allow for a relying party (RP) to:
 
 * Obtain greater understanding of how the attribute and its value were obtained, determined, and vetted;
 * Promote greater confidence in applying appropriate authorization decisions to subjects external to the domain of a protected system or data (i.e., external users);
@@ -23,7 +23,7 @@ This NISTIR defines a set of optional elements of an attribute metadata schema t
 
 Specifically, this document addresses the following:  
 
-* **Attribute Metadata** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the format in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= '72'`). This schema provides a set of attribute metadata from which to choose when establishing an attribute sharing agreement (i.e., trust time) and the rationale for their inclusion.
+* **Attribute Schema Metadata** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the format in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= '72'`). This schema provides a set of attribute metadata from which to choose when establishing an attribute sharing agreement (i.e., trust time) and the rationale for their inclusion.
 * **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height (72”). A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
 * **Use Cases** - To demonstrate the applicability of the proposed metadata schema, this document also provides example use cases in which the application of the proposed schema would be used to support authorization decision making, thus allowing for greater confidence in federated identities and attributes.
 * **Example Assertions** - Finally, this report includes example assertions illustrating what a technical implementation of the schema would look like leveraging market standards such as Extensible Access Control Markup Language (XACML).
