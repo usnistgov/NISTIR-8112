@@ -136,7 +136,8 @@ This NISTIR proposes attribute schema metadata and attribute value metadata as p
 * Obtain greater understanding of how the attribute and its value were obtained, determined, and vetted;
 * Have greater confidence in applying appropriate authorization decisions to subjects external to the domain of a protected system or data;
 * Develop more granular access control policies;
-* Make more effective authorization decisions; and
+* Make more effective authorization decisions;
+* Manage rules about the processing of data more effectively; and
 * Promote federation of attributes.
 
 This document defines a set of optional elements to support cross-organization confidence in attribute assertions as well as the semantics and syntax required to support interoperability. The schema contains two core components, `attribute schema metadata` and `attribute value metadata` which, along with their suggested elements, are described below:
@@ -149,6 +150,7 @@ This document defines a set of optional elements to support cross-organization c
 | **Allowed Values** | A defined set of allowed values for the attribute.  |   None  |     
 |**Format**| A defined format in which the attribute will be expressed.| None |
 | **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute.|None |
+| **Consent** | The type of consent obtained | None |
 
 * **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
 
@@ -165,10 +167,10 @@ This document defines a set of optional elements to support cross-organization c
 **Provider** |The name of the entity that is providing the attribute.|-\<Provider's Name> <br> -"None"
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| -"Authoritative" <br> -"Sourced" <br> -"Self-Asserted" <br> -"Derived"
 **Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| -"Yes" <br> -"No" <br> -"Unknown"
-**Date Consented** | The date on which express consent for release of the attribute value was acquired. | No restrictions
-**Acceptable Uses** |Allowed uses for entities that ingest attributes.| -"Authorization" <br> -"Secondary Use" <br> -"No Further Disclosure"
+**Date Consented** | The date on which subject consent for release of the attribute value was acquired. | No restrictions
+**Acceptable Uses** |Allowed uses for entities that receive attributes.| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached.| No restrictions
-**Data Deletion Date** | Indicates the date a certain attribute should be deleted from records.| No restrictions
+**Data Deletion Date** | Indicates the date the attribute is to be deleted from records.| No restrictions
 **Classification** | The security classification level of the attribute.| -"Unclassified" <br> -"Controlled Unclassified" <br> -"Confidential" <br> -"Secret" <br> -"Top Secret"
 **Releasability** |  The restrictions regarding to whom an attribute value may be released. | -"NATO" <br> -"FVEY" <br> -"NOFORN" <br> -"Public Release" <br> -"None"
 
