@@ -24,6 +24,9 @@ Attribute schema metadata provide information that is applicable to the attribut
 | **Allowed Values** | A defined set of allowed values for the attribute         |             None                                  |                                                    
 |**Format**| A defined format in which the attribute will be expressed| None|
 | **Verification Frequency** |The frequency at which the AP will re-verify the attribute| None |
+| **Consent** | The type of consent obtained | None |
+| **Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions |
+
 
 #### 3.1.1. Description
 
@@ -40,6 +43,14 @@ This metadata element describes the format for expressing attribute's value. For
 #### 3.1.4. Verification Frequency
 
 In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this attribute schema metadata element may negate the need for some of the currency attribute value metadata elements discussed later in this paper.
+
+#### 3.1.5. Consent
+There may be legal requirements or trust framework policies that subjects must consent to the disclosure or collection of their information. Therefore, to avoid placing the RP in violation of data collection requirements, it is beneficial for the AP and the RP to agree on when subject consent is required before the attributes are sent to the RP and what type of consent is required (e.g. explicit, implied, opt-in, opt-out). 
+
+#### 3.1.6. Date Consented
+
+As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying the type of subject consent obtained when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. 
+
 
 ### 3.2. Attribute Value Metadata
 
@@ -58,7 +69,7 @@ The sections that follow list and provide details on the elements in each catego
 |**Provenance**|Metadata relevant or pertaining to evaluating the source of the attribute’s value|
 |**Accuracy**|Metadata relevant or pertaining to determining if the attribute's value is correct and belongs to a specific subject|
 |**Currency**|Metadata relevant or pertaining to determining the “freshness” of a given attribute's value|
-|**Privacy**|Metadata relevant or pertaining to privacy aspects of a given attribute's value|
+|**Privacy**|Metadata relevant or pertaining to the management of privacy policies relating to a given attribute’s value|
 |**Classification**|Metadata relevant or pertaining to the security classification of a given attribute's value|
 
 <a name="table3"></a>**Table 3: Distribution of Attribute Value Metadata Elements**
@@ -137,15 +148,15 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 
 ##### Origin
 
-The `Origin` element conveys the name of the entity that established the initial attribute value. This may or may not be an authoritative entity, or the provider; if, for example, the AP generates the attribute value through a derivation process, then the AP would be the origin. The key distinction between the origin and the provider is the act of initially generating, capturing, or provisioning the attribute's value, rather than just asserting the attribute's value to an RP. Inclusion of this metadata element provides the RP with substantial insight, but at a potential cost to the individual as it may also reveal additional information about the subject to whom the attribute value is bound. For example, this value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences. Selection and use of this metadata element should be carefully considered based on both authorization needs as well as privacy requirements. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value's `verification method` without the `origin` element-which can reveal unnecessary information about a subject. The original source of the information may not be essential as long as the value has been verified using an acceptable method.
+The `Origin` element conveys the name of the entity that established the initial attribute value. This may or may not be an authoritative entity, or the provider; if, for example, the AP generates the attribute value through a derivation process, then the AP would be the origin. The key distinction between the origin and the provider is the act of initially generating, capturing, or provisioning the attribute's value, rather than just asserting the attribute's value to an RP.
 
 ##### Provider
 
-This specifies the name of the entity that supplies the attribute value to the RP. This does not have to be the attribute provider itself. This element enables RPs to understand and evaluate individual attribute values that may be included in a bundle of attributes. For example, if a full service credential provider generates an assertion with several identity attributes provided by multiple APs, the `provider` element enables the RP to understand, at a granular level, where each has come from and determine whether or not that value can be used for access to specific resources. In instances where a single attribute is asserted directly to the RP, this element may not be necessary since the assertion itself will carry the provider information as well as a certificate or digital signature. The privacy considerations for this element are similar to those for origin. Divulging an individual’s relationship with a particular provider allows for broader profiling, and the sharing of information that an individual might not know is being passed on, and might not want to be passed on.
+This specifies the name of the entity that supplies the attribute value to the RP. This does not have to be the attribute provider itself. This element enables RPs to understand and evaluate individual attribute values that may be included in a bundle of attributes. For example, if a full service credential provider generates an assertion with several identity attributes provided by multiple APs, the `provider` element enables the RP to understand, at a granular level, where each has come from and determine whether or not that value can be used for access to specific resources. In instances where a single attribute is asserted directly to the RP, this element may not be necessary since the assertion itself will carry the provider information as well as a certificate or digital signature.
 
 ##### Pedigree
 
-`Pedigree` refers to the attribute value's relationship to an authoritative source. Essentially, it allows for the RP to better understand the process by which an attribute's value is generated and to determine whether or not it is from an acceptable authoritative source. Since this may reveal an individual’s association with a separate entity, and potentially additional information can be inferred from this association, the privacy considerations mirror those explained above for provider and origin. Recommended values for this element include:
+`Pedigree` refers to the attribute value's relationship to an authoritative source. Essentially, it allows for the RP to better understand the process by which an attribute's value is generated and to determine whether or not it is from an acceptable authoritative source. Recommended values for this element include:
 
 1. **Authoritative** - The attribute's value was acquired directly from the source of authority. For example, an AP has received a driver's license number directly from the state DMV which issued the license.
 1. **Sourced** - The attribute's value has been acquired from one or more non-authoritative sources. For example, an AP purchases a driver's license number from a third-party data aggregator.
@@ -154,48 +165,38 @@ This specifies the name of the entity that supplies the attribute value to the R
 
 Taken in conjunction with the accuracy metadata, this information can enable the RP to better understand the origin of an attribute value, how it relates to its authoritative source, and how it has been verified — all of which help an RP establish a more complete picture of the value's usefulness and trustworthiness.
 
+**Privacy Considerations**: Provenance metadata reveal information about the relationship between the data source and the subject which could allow for profiling of the subject beyond the purpose of authorization and which the subject may not know is occurring. For example, the origin value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences for the individual’s privacy. Selection and use of these metadata elements should be carefully considered based on both authorization needs as well as a privacy risk assessment. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value’s verification method without the origin element-the value of which may not outweigh the risk to privacy. The original source of the information may not be essential as long as the value has been verified using an acceptable method. To the extent selection of these elements are operationally necessary, RPs may manage the privacy risk through additional policies such as limiting use of the value outside of the authorization process or retaining the record of the verification without the actual value.
+
 #### 3.2.1.4. Privacy Metadata
 
 
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value|-"Yes" <br> -"No" <br> -"Unknown"
-**Date Consented** | The date on which express consent for release of the attribute value was acquired| No restrictions
-**Acceptable Uses** |Allowed additional uses for entities that receive attributes| -"Authorization" <br> -"Secondary Use" <br> -"No Further Disclosure"
+**Acceptable Uses** |Allowed additional uses for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
-**Data Deletion Date** | Indicates the date a certain attribute should be deleted from records| No restrictions
+**Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
 
-
-
-##### Individual Consented
-
-RPs may have specific legal, policy, or business requirements regarding whether a user consented to the release of a specific attribute. This element enables organizations to meet those requirements, ensuring that they’ve gained express consent from an individual. Recommended values include:
-
-1. **Yes** - The individual expressly consented to the release of the attribute's value for the purposes of the transaction.
-1. **No** - The individual has not expressly consented to the release of the attribute's value.
-1. **Unknown** - It is not known by the provider whether or not the individual has expressly consented to release of the attribute.
-
-##### Date Consented
-
-In addition to requiring information around whether the individual has consented to release of the attribute value, some RPs may wish to understand when that consent was received. Individual sentiments towards privacy and specific pieces of data may change over time. As a result, organizations may wish to employ the `date consented` metadata element when leveraging an attribute value in an access or eligibility decision.
 
 ##### Acceptable Uses
 
-This explains to RPs what business cases, in addition to the primary uses, the metadata can be used to support according to policy restrictions conveyed by the AP. For example, values might be eligible for secondary uses beyond the initially intended purpose, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Recommended values for this element include:
+This metadata element explains to receiving entities the use conditions for the attribute. For example, values might be limited to use for authorization; eligible for secondary uses beyond authorization, or not eligible for any further disclosure. Additionally, organizations or trust frameworks might also create their own categories of acceptable uses based on their policies. Potential values for this element include:
 
-1. **Authorization** - The attribute value may only be used for processes related to authorization and compliance with law or legal process.
-1. **Secondary Use** - The attribute value may be used for purposes beyond that for which they were initially divulged. Secondary use requires separate, explicit consent from user at initiation. Secondary uses may include, but are not limited to: payment for a service, quality analysis of a service, provider certification/accreditation, or marketing or other business or commercial use.
-1. **No Further Disclosure** - The attribute value should not be passed on to other parties for any purpose unless required by law.
-
+1. **Authorization** - The attribute value may only be used for processes related to authorization or compliance with law or legal process.
+1. **Secondary Use** - The attribute value may be used for purposes beyond processes related to authorization or compliance with law or legal process. Secondary use may be unlimited or subjects may only have agreed to specific types of uses such as service improvement, marketing, etc. Entities may choose as a best practice or may be required by law or policy to request separate, explicit consent from user at initiation of the use.
+1. **No Further Disclosure** - Although certain types of secondary uses by the RP may be permitted, further release to other third parties may not be permitted (unless required by law or legal process or unless with additional consent from the subject).
 
 ##### Cache Time to Live
 
-This metadata element describes the length of time which a specific attribute value may reside in cache memory for use again in future transactions. Due to the sensitivity of certain attributes values, this metadata element enables the parties involved to properly cache and handle the values they are sending and retrieving as part of their transactions. Unlike many of the other metadata elements in this schema, the cache time to live enables attribute providers to express requirements to the RP around the protection of the information they are delivering as part of an assertion. In some cases the time to live may be dictated by regulation or law and this information needs to be relayed to RP systems so data are handled accordingly. The more sensitive an attribute value, the shorter time it will likely be enabled to live in temporary memory. As an example, the cache time to live for something like a credit card CVV may be just a couple of seconds, whereas the cache time to live for birth date may be substantially longer — potentially hours or days.
+This metadata element describes the length of time which a specific attribute value may reside in cache memory for use again in future transactions. Due to the sensitivity of certain attributes values, this metadata element enables the parties involved to properly cache and handle the values they are sending and retrieving as part of their transactions. In some cases the time to live may be dictated by regulation or law and this information needs to be relayed to RP systems so data are handled accordingly. The more sensitive an attribute value, the shorter time it will likely be enabled to live in temporary memory.
+
+**NB**: Attribute value sensitivity cannot be treated as an absolute metric. Sensitivity is a contextual, risk-based determination. Therefore, even if an AP makes a determination that within the context of its system, the attribute value is not sensitive, receiving entities should make their own periodic risk assessments as to the attribute value’s sensitivity based on the context of their systems, uses, and aggregation of additional data. 
 
 ##### Data Deletion Date
 
-This refers to long-term holding of attribute values. Minimizing data, and indicating the retention time for this data, is a generally accepted privacy tenant. Some attribute values produce little to no privacy risk for individuals, and can potentially be used forever without producing any negative consequences. Other values are more likely to produce problems for individuals; a deletion date ensures that this sensitive information is disposed of at a certain point.
+This metadata element refers to long-term holding of attribute values. Minimizing data, and indicating the retention time for this data, is a generally accepted privacy principle. Some attribute values may produce little to no privacy risk for individuals. Other values may raise the privacy risk profile; a deletion date ensures that sensitive information does not remain in systems indefinitely.
+
+**NB**: Attribute value sensitivity cannot be treated as an absolute metric. Sensitivity is a contextual, risk-based determination. Therefore, even if an AP makes a determination that within the context of its system, the attribute value is not sensitive, receiving entities should make their own periodic risk assessments as to the attribute value’s sensitivity based on the context of their systems, uses, and aggregation of additional data.
 
 #### 3.2.1.5. Classification Metadata
 
