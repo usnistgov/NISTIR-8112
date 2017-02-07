@@ -166,7 +166,6 @@ This document defines a set of optional elements to support cross-organization c
 **Origin** |The name of the entity that issues or creates the initial attribute value.| -\<Origin's Name> <br> -"None"
 **Provider** |The name of the entity that is providing the attribute.|-\<Provider's Name> <br> -"None"
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| -"Authoritative" <br> -"Sourced" <br> -"Self-Asserted" <br> -"Derived"
-**Individual Consented** |Captures whether the user has expressly consented to providing the attribute value.| -"Yes" <br> -"No" <br> -"Unknown"
 **Date Consented** | The date on which subject consent for release of the attribute value was acquired. | No restrictions
 **Acceptable Uses** |Allowed uses for entities that receive attributes.| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached.| No restrictions
