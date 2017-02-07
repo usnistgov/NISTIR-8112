@@ -151,6 +151,7 @@ This document defines a set of optional elements to support cross-organization c
 |**Format**| A defined format in which the attribute will be expressed.| None |
 | **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute.|None |
 | **Consent** | The type of consent obtained | None |
+| **Date Consented** | The date on which subject consent for release of the attribute value was acquired. | No restrictions |
 
 * **Attribute Value Metadata** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible attribute value metadata for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of attribute value metadata, proposed values for those metadata fields, and rationale for their inclusion.
 
@@ -166,7 +167,6 @@ This document defines a set of optional elements to support cross-organization c
 **Origin** |The name of the entity that issues or creates the initial attribute value.| -\<Origin's Name> <br> -"None"
 **Provider** |The name of the entity that is providing the attribute.|-\<Provider's Name> <br> -"None"
 **Pedigree** |Description of the attribute value's relationship to the authoritative source of the value.| -"Authoritative" <br> -"Sourced" <br> -"Self-Asserted" <br> -"Derived"
-**Date Consented** | The date on which subject consent for release of the attribute value was acquired. | No restrictions
 **Acceptable Uses** |Allowed uses for entities that receive attributes.| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached.| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records.| No restrictions
