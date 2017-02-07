@@ -3,13 +3,14 @@
 
 # NIST Internal Report 8112 (Draft)
 
-# A Proposed Schema for Enhancing Confidence in Federated Attributes
+# Attribute Metadata:
+## *A Proposed Schema for Evaluating Federated Attributes*   
 
-Paul A. Grassi
-Naomi B. Lefkowitz
+Paul A. Grassi  
+Naomi B. Lefkowitz  
 Ellen M. Nadeau  
 Ryan J. Galluzzo   
-Abhiraj T. Dinh
+Abhiraj T. Dinh  
 
 {::comment}
 
@@ -23,10 +24,11 @@ https://doi.org/10.6028/NIST.SP.XXX
 
 # NIST Internal Report 8112 Draft
 
-# A Proposed Schema for Enhancing Confidence in Federated Attributes
+# Attribute Metadata:
+## *A Proposed Schema for Evaluating Federated Attributes*   
 
-Paul A. Grassi
-Naomi B. Lefkowitz
+Paul A. Grassi  
+Naomi B. Lefkowitz  
 Ellen M. Nadeau  
 *Applied CyberSecurity Division  
 Information Technology Laboratory*
