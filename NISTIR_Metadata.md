@@ -1,5 +1,7 @@
 <a name="sec3"></a>
 
+<div class="breaker"/>
+
 ## 3. Metadata
 
 The term *attribute* is used throughout this document to refer to a defined characteristic of an individual — often referred to as subject attributes. *Home address* is one example of an attribute of a person. The term *attribute value* is used throughout to refer to a specifically assigned value for an attribute; for example, Jane Doe's *home address* is *1 Main St., Anytown, VA 11111*. Attribute providers collect and maintain these elements—the attribute and its value[s]—together. In a federated environment, these attributes are asserted to the relying party (RP) to support the provision of a benefit or service, or when authorizing access to a protected resource. Attributes and attribute values may also be associated with devices or non-person entities; however, these entities are not addressed in this document.
