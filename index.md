@@ -5,7 +5,7 @@ description: "Public Draft of NIST Internal Report: 8112 Attribute Metadata"
 ---
 <section class="home home-title" markdown="1">
 
-# Attribute Metadata: Public Draft Open For Comments!
+# Attribute Metadata: A Proposed Schema for Evaluating Federated Attributes Public Draft Open For Comments!
 
 </section>
 
