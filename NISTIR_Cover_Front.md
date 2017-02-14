@@ -1,7 +1,7 @@
 
 <div class="text-right" markdown="1">
 
-# NIST Internal Report 8112 (Draft)
+# NIST Internal Report 8112
 
 # A Proposed Schema for Enhancing Confidence in Federated Attributes
 
@@ -19,9 +19,12 @@ https://doi.org/10.6028/NIST.SP.XXX
 {:/comment}
 
 ![](media/csd.png)    
-![](media/nist_logo.png)  
+![](media/nist_logo.png) 
 
-# NIST Internal Report 8112 Draft
+</div><div class="breaker"text-right" markdown="1">
+
+
+# NIST Internal Report 8112
 
 # A Proposed Schema for Enhancing Confidence in Federated Attributes
 
@@ -43,7 +46,7 @@ https://doi.org/10.6028/NIST.SP.XXX
 
 {:/comment}
 
-July 2016
+Month TBD 2017
 
 ![](media/commerce_logo.png)
 
@@ -51,10 +54,12 @@ U.S. Department of Commerce
 *Penny Pritzker, Secretary*
 
 National Institute of Standards and Technology  
-*Willie E. May, Under Secretary of Commerce for Standards and
+* Kent Rochford, Acting Under Secretary of Commerce for Standards and
 Technology and Director*
 
 </div>
+
+<div class="breaker"/>
 
 <div class="text-center" markdown="1">
 
