@@ -27,7 +27,6 @@ Attribute schema metadata provide information that is applicable to the attribut
 |**Format**| A defined format in which the attribute will be expressed| None|
 | **Verification Frequency** |The frequency at which the AP will re-verify the attribute| None |
 | **Consent** | The type of consent obtained | None |
-| **Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions |
 
 
 #### 3.1.1. Description
@@ -48,10 +47,6 @@ In most situations, it is highly beneficial for the RP and the AP to agree to se
 
 #### 3.1.5. Consent
 There may be legal requirements or trust framework policies that subjects must consent to the disclosure or collection of their information. Therefore, to avoid placing the RP in violation of data collection requirements, it is beneficial for the AP and the RP to agree on when subject consent is required before the attributes are sent to the RP and what type of consent is required (e.g. explicit, implied, opt-in, opt-out). 
-
-#### 3.1.6. Date Consented
-
-As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying the type of subject consent obtained when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. 
 
 
 ### 3.2. Attribute Value Metadata
@@ -78,67 +73,14 @@ The sections that follow list and provide details on the elements in each catego
 
 |**Metadata Category**|**Number of Elements**|
 |:----------------|:----------------:|
-| Accuracy |2|
 | Provenance |3|
+| Accuracy |2|
 | Currency|3|
-| Privacy|5|
+| Privacy|4|
 | Classification |2|
-|**Total**|**15**|
+|**Total**|**14**|
 
-
-#### 3.2.1.1. Accuracy Metadata Elements
-
-
-
-**Metadata Element**|**Description**|**Recommended Values**
---------------------|--------------|------------
-**Verifier** |The entity that verified the attribute's value<br>| -"Origin" <br> -"Provider" <br> -"Not Verified"
-**Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| -"Document Verification" <br> -"Record Verification" <br> -"Document Verification with Record Verification" <br> -"Proof of Possession" <br> -"Probabilistic Verification" <br> -"Not Verified"
-
-
-
-##### Verifier
-
-Verified attributes allow RPs to make informed decisions around whether or not to trust an attribute's value during policy evaluation. In addition, understanding *who* verified an attribute value may influence the RP's decision about whether or not to accept an attribute value as part of an access control decision. The `verifier` metadata element is intended to answer this "who" question. Namely: did the organization that established the attribute value perform the verification themselves or was the verification done at a later date by the AP? Acceptable values for this metadata field include:
-
-1. **Origin** - The attribute's value was verified by the entity that issued or created it (e.g., a Social Security Number verified by the Social Security Administration).
-1. **Provider** - The attribute's value was verified by the attribute provider.
-1. **Not Verified** - The value of the attribute was not verified.
-
-##### Verification Method
-
-This metadata element contains information on the process used to confirm that an attribute value is both true *and* belongs to the specified individual. This is sometimes necessary to support an authorization decision, but may not always be required. The acceptable values for `verification method` are intended to provide insight into the verification processes used by providers and enable greater confidence in a given attribute's value. This is particularly beneficial if there are multiple providers for instances of a single attribute. Recommended values for this element are:
-
-1. **Document Verification** - The attribute value was verified by inspecting a document that is acceptable to the RP (e.g., driver's license, medical record, utility bill). Transactional participants may want to determine the types of acceptable documents for attribute value verification in advance.
-1. **Record Verification** - The attribute value was verified against an authoritative record or database. For the purposes of this schema, the term "authoritative" is used consistently with its definition in [SP 800-63-3](https://pages.nist.gov/800-63-3).
-1. **Document Verification with Record Verification** - The attribute value was verified against both an acceptable document and an authoritative record or database.
-2. **Proof of Possession** - Confirmation of an individual’s ability to demonstrate possession of a device or account is used to verify the attribute’s value. Certain attributes and their values, such as phone numbers and email addresses, can be verified by direct communication (SMS, voice, or email) with the entity to which the value is attributed. This method of verification may not be applicable to all attribute values. However, to a certain set of attributes, this is a legitimate approach to determining that the attribute's value is both valid and associated with the appropriate individual.
-1. **Probabilistic Verification** - The attribute provider has compared the attribute’s value to multiple non-authoritative data sources to increase the probability that the attribute value is true and belongs to the appropriate individual. For example, rather than verifying a user address with the post office, an AP may compare the shipping addresses from multiple  e-commerce transactions to increase confidence in the attributes’ value. There may be many reasons an AP leverages “probabilistic verification” including the lack of available authoritative sources or limited automated capabilities to leverage authoritative sources. Methods of 'probabilistic verification' should be defined in the provider's APS and should be carefully considered for potentially negative privacy impacts. Probailistic Verification should not be confused with the concept of `Derived` (a recommended value for the Pedigree element), which focuses on generating the attribute's value rather than verifying it.
-1. **Not Verified** - The attribute's value has not been verified.
-
-#### 3.2.1.2. Currency Metadata
-
-**Metadata Element**|**Description**|**Recommended Values**
---------------------|--------------|------------
-**Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual|No restrictions
-**Last Refresh** |The date and time when the attribute was last refreshed |No restrictions
-**Expiration Date** |The date an attribute’s value is considered to be no longer valid|No restrictions
-
-##### Last Verification
-
-RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain values associated with attributes such as *Role* or *Security Clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata focuses on the last date that verification occurred, and does not include any information about *methods* of verification.
-
-##### Last Refresh
-
-`Last Refresh` contains information on the date and time when an attribute’s value was last refreshed. The age of the attribute can be derived from this attribute value. `Last Refresh` also allows RPs to determine the currency of the attribute value, and whether the attribute was updated recently enough to be used in a particular transaction.  
-
-##### Expiration Date
-
-Attribute values sent from an AP to an RP may only be valid for its defined use for a set amount of time, depending on requirements, policy, or legal factors. The date after which an attribute’s value is considered no longer valid for its defined use is the `Expiration Date`. Though `Expiration Date` and `Last Refresh` both allow an RP to determine if an attribute’s value is current and sufficient, `Expiration Date` differs from `Last Refresh` in that there is a specified date or threshold after which the attribute’s value becomes void for its defined use. RPs have the freedom to accept attributes after they have been considered expired for their original intended use, but this decision is made at their own discretion based upon the intended use of the attribute value, the type of interaction it is supporting, and the environment in which they operate. For example, an RP may choose to accept a recently expired driver’s license number for access to a low assurance service. However, it is unlikely that an agency would accept a lapsed security clearance for access to classified data.
-
-#### 3.2.1.3. Provenance Metadata
-
-
+#### 3.2.1.1. Provenance Metadata
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
@@ -169,16 +111,69 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 **Privacy Considerations**: Provenance metadata reveal information about the relationship between the data source and the subject which could allow for profiling of the subject beyond the purpose of authorization and which the subject may not know is occurring. For example, the origin value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences for the individual’s privacy. Selection and use of these metadata elements should be carefully considered based on both authorization needs as well as a privacy risk assessment. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value’s verification method without the origin element-the value of which may not outweigh the risk to privacy. The original source of the information may not be essential as long as the value has been verified using an acceptable method. To the extent selection of these elements are operationally necessary, RPs may manage the privacy risk through additional policies such as limiting use of the value outside of the authorization process or retaining the record of the verification without the actual value.
 
+#### 3.2.1.2. Accuracy Metadata Elements
+
+**Metadata Element**|**Description**|**Recommended Values**
+--------------------|--------------|------------
+**Verifier** |The entity that verified the attribute's value<br>| -"Origin" <br> -"Provider" <br> -"Not Verified"
+**Verification Method** |The method by which the attribute value was verified as true and belonging to the specific individual| -"Document Verification" <br> -"Record Verification" <br> -"Document Verification with Record Verification" <br> -"Proof of Possession" <br> -"Probabilistic Verification" <br> -"Not Verified"
+
+
+
+##### Verifier
+
+Verified attributes allow RPs to make informed decisions around whether or not to trust an attribute's value during policy evaluation. In addition, understanding *who* verified an attribute value may influence the RP's decision about whether or not to accept an attribute value as part of an access control decision. The `verifier` metadata element is intended to answer this "who" question. Namely: did the organization that established the attribute value perform the verification themselves or was the verification done at a later date by the AP? Acceptable values for this metadata field include:
+
+1. **Origin** - The attribute's value was verified by the entity that issued or created it (e.g., a Social Security Number verified by the Social Security Administration).
+1. **Provider** - The attribute's value was verified by the attribute provider.
+1. **Not Verified** - The value of the attribute was not verified.
+
+##### Verification Method
+
+This metadata element contains information on the process used to confirm that an attribute value is both true *and* belongs to the specified individual. This is sometimes necessary to support an authorization decision, but may not always be required. The acceptable values for `verification method` are intended to provide insight into the verification processes used by providers and enable greater confidence in a given attribute's value. This is particularly beneficial if there are multiple providers for instances of a single attribute. Recommended values for this element are:
+
+1. **Document Verification** - The attribute value was verified by inspecting a document that is acceptable to the RP (e.g., driver's license, medical record, utility bill). Transactional participants may want to determine the types of acceptable documents for attribute value verification in advance.
+1. **Record Verification** - The attribute value was verified against an authoritative record or database. For the purposes of this schema, the term "authoritative" is used consistently with its definition in [SP 800-63-3](https://pages.nist.gov/800-63-3).
+1. **Document Verification with Record Verification** - The attribute value was verified against both an acceptable document and an authoritative record or database.
+2. **Proof of Possession** - Confirmation of an individual’s ability to demonstrate possession of a device or account is used to verify the attribute’s value. Certain attributes and their values, such as phone numbers and email addresses, can be verified by direct communication (SMS, voice, or email) with the entity to which the value is attributed. This method of verification may not be applicable to all attribute values. However, to a certain set of attributes, this is a legitimate approach to determining that the attribute's value is both valid and associated with the appropriate individual.
+1. **Probabilistic Verification** - The attribute provider has compared the attribute’s value to multiple non-authoritative data sources to increase the probability that the attribute value is true and belongs to the appropriate individual. For example, rather than verifying a user address with the post office, an AP may compare the shipping addresses from multiple  e-commerce transactions to increase confidence in the attributes’ value. There may be many reasons an AP leverages “probabilistic verification” including the lack of available authoritative sources or limited automated capabilities to leverage authoritative sources. Methods of 'probabilistic verification' should be defined in the provider's APS and should be carefully considered for potentially negative privacy impacts. Probailistic Verification should not be confused with the concept of `Derived` (a recommended value for the Pedigree element), which focuses on generating the attribute's value rather than verifying it.
+1. **Not Verified** - The attribute's value has not been verified.
+
+#### 3.2.1.3. Currency Metadata
+
+**Metadata Element**|**Description**|**Recommended Values**
+--------------------|--------------|------------
+**Last Verification** |The date and time when the attribute value was last verified as being true and belonging to the specified individual|No restrictions
+**Last Refresh** |The date and time when the attribute was last refreshed |No restrictions
+**Expiration Date** |The date an attribute’s value is considered to be no longer valid|No restrictions
+
+##### Last Verification
+
+RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain values associated with attributes such as *Role* or *Security Clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata focuses on the last date that verification occurred, and does not include any information about *methods* of verification.
+
+##### Last Refresh
+
+`Last Refresh` contains information on the date and time when an attribute’s value was last refreshed. The age of the attribute can be derived from this attribute value. `Last Refresh` also allows RPs to determine the currency of the attribute value, and whether the attribute was updated recently enough to be used in a particular transaction.  
+
+##### Expiration Date
+
+Attribute values sent from an AP to an RP may only be valid for its defined use for a set amount of time, depending on requirements, policy, or legal factors. The date after which an attribute’s value is considered no longer valid for its defined use is the `Expiration Date`. Though `Expiration Date` and `Last Refresh` both allow an RP to determine if an attribute’s value is current and sufficient, `Expiration Date` differs from `Last Refresh` in that there is a specified date or threshold after which the attribute’s value becomes void for its defined use. RPs have the freedom to accept attributes after they have been considered expired for their original intended use, but this decision is made at their own discretion based upon the intended use of the attribute value, the type of interaction it is supporting, and the environment in which they operate. For example, an RP may choose to accept a recently expired driver’s license number for access to a low assurance service. However, it is unlikely that an agency would accept a lapsed security clearance for access to classified data.
+
 #### 3.2.1.4. Privacy Metadata
 
 
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
+**Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions
 **Acceptable Uses** |Allowed additional uses for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
 
+
+#### Date Consented
+
+As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying the type of subject consent obtained when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. 
 
 ##### Acceptable Uses
 
