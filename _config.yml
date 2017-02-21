@@ -1,6 +1,6 @@
 # Site settings
-title: NISTIR 8112 A Proposed Schema for Enhancing Confidence in Federated Attributes (Draft)
-description: "Public Draft for NIST Internal Report:8112 A Proposed Schema for Enhancing Confidence in Federated Attributes"
+title: NISTIR 8112 Attribute Metadata: A Proposed Schema for Evaluating Federated Attributes (Draft)
+description: "Public Draft for NIST Internal Report 8112 Attribute Metadata"
 baseurl: "/NISTIR-8112" # the subpath of your site, e.g. /blog
 url: "https://pages.nist.gov/" # the base hostname & protocol for your site
 
