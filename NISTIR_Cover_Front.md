@@ -56,7 +56,7 @@ U.S. Department of Commerce
 *Penny Pritzker, Secretary*
 
 National Institute of Standards and Technology  
-* Kent Rochford, Acting Under Secretary of Commerce for Standards and
+*Kent Rochford, Acting Under Secretary of Commerce for Standards and
 Technology and Director*
 
 </div>
