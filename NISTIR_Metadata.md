@@ -166,7 +166,7 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions
-**Acceptable Uses** |Allowed additional uses for entities that receive attributes| No restrictions
+**Acceptable Uses** |Allowed use conditions for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
 
