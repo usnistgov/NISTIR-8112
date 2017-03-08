@@ -22,7 +22,7 @@ https://doi.org/10.6028/NIST.SP.XXX
 ![](media/csd.png)    
 ![](media/nist_logo.png) 
 
-</div><div class="breaker"text-right" markdown="1">
+</div><div class="breaker text-right" markdown="1">
 
 
 # NIST Internal Report 8112
