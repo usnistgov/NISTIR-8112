@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "DRAFT NIST Internal Report 8112"
-description: "A Proposed Schema for Enhancing Confidence in Federated Attributes"
+description: "Attribute Metadata: A Proposed Schema for Evaluating Federated Attributes"
 ---
 
 {{ site.time | date_to_rfc822 }}

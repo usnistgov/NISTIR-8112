@@ -8,20 +8,20 @@ Access control policy increasingly depends on evaluating the attributes of the i
 
 ### 1.1.	Purpose
 
-This NISTIR proposes attribute schema metadata and attribute value metadata as part of an overall schema intended to convey information about a subject's attribute(s) to allow for a relying party (RP) to:
+This NISTIR proposes attribute schema metadata and attribute value metadata to convey information about a subject's attribute(s) to allow for a relying party (RP) to:
 
 * Obtain greater understanding of how the attribute and its value were obtained, determined, and vetted;
 * Promote greater confidence in applying appropriate authorization decisions to subjects external to the domain of a protected system or data (i.e., external users);
 * Enable more effective authorization decisions; and 
 * Promote federation of attributes.
 
-The model proposed in this document will help RPs determine the most appropriate attribute metadata elements for a given transaction. In the future, it could serve as a foundation for an attribute confidence scoring structure to further simplify the process of aligning attribute based authorization decisions with the risk environment.
+The model proposed in this document allows RPs determine the most appropriate attribute metadata elements for a given transaction. In the future, it could serve as a foundation for an attribute confidence scoring structure to further simplify the process of aligning attribute based authorization decisions with the risk environment.
 
-In addition, as a NISTIR, this document is intended to be treated as an "implementers' draft" so that developers and access control policymakers can determine the efficacy and required adjustments of the attribute metadata elements. By issuing this as an implementers' draft, NIST seeks to obtain feedback on agencies' and industries' experiences with this approach in order to identify next steps, such as potentially transitioning this document to a Special Publication or a contribution to a private sector standards developer.
+In addition, as a NISTIR, this document is intended to be treated as an "implementers' draft" so that developers and business owners can determine the efficacy and required adjustments of the attribute metadata elements. By issuing this as an implementers' draft, NIST seeks to obtain feedback on agencies' and industries' experiences with this approach in order to identify next steps, such as potentially transitioning this document to a Special Publication or a contribution to a private sector standards developer.
 
 ### 1.2.	Scope
 
-This NISTIR defines a set of optional elements of an attribute metadata schema to support cross-organization confidence, such as two executive branch agencies, in attribute assertions. It also provides the semantics and syntax required to support interoperability. As mentioned, NIST does not intend to make any of this schema required in federal systems and attribute-based information sharing.  Rather, this schema represents a compendium of possible metadata elements to assist in risk-based decision making by an RP. This schema is focused on subjects (individual users); objects and data tagging, while related, are out of scope.
+This NISTIR defines a set of optional elements of an attribute metadata schema to support cross-organization decision making, such as two executive branch agencies, in attribute assertions. It also provides the semantics and syntax required to support interoperability. As mentioned, NIST does not intend to make any of this schema required in federal systems and attribute-based information sharing.  Rather, this schema represents a compendium of possible metadata elements to assist in risk-based decision making by an RP. This schema is focused on subjects (individual users); objects and data tagging, while related, are out of scope.
 
 Specifically, this document addresses the following:  
 

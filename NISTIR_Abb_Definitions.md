@@ -57,3 +57,7 @@ Structured information that describes, explains, locates, or otherwise makes it 
 #### Relying Party (RP)
 
 An entity that relies upon a subject’s authenticator(s) and credentials or an IDP's assertion of a subject’s identity, typically to process a transaction or to grant access to information or a system.
+
+#### Trust Time
+
+Refers to the process of establishing agreements between framework participants in order to develop metadata schema requirements consistent with community needs. 
