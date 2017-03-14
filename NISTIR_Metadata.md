@@ -46,7 +46,7 @@ This metadata element describes the format for expressing attribute's value. For
 In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this attribute schema metadata element may negate the need for some of the currency attribute value metadata elements discussed later in this paper.
 
 #### 3.1.5. Consent
-There may be legal requirements or trust framework policies that subjects must consent to the disclosure or collection of their information. Therefore, to avoid placing the RP in violation of data collection requirements, it is beneficial for the AP and the RP to agree on when subject consent is required before the attributes are sent to the RP and what type of consent is required (e.g. explicit, implied, opt-in, opt-out). 
+The consent metadata element ensures that consent is obtained, if required, before a system processes a subject’s PII. Consent transfers the risk that arises from the processing of PII from an organization to an individual; thus, it should be used when individuals can reasonably be expected to understand and accept any privacy risks arising from their authorization. Obtaining consent can 1) ensure alignment with any legal or policy requirements regarding notice and consent, and 2) enable reliable assumptions by subjects about how a system is processing their information. 
 
 
 ### 3.2. Attribute Value Metadata
@@ -166,6 +166,7 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions
+**Consent Type** | Indicates the type of consent| No restrictions
 **Acceptable Uses** |Allowed use conditions for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
@@ -174,6 +175,10 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 #### Date Consented
 
 As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying the type of subject consent obtained when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. 
+
+#### Consent Type
+
+As stated earlier in section 3.1.5, obtaining consent before a system processes a subject’s PII is a way to transfer risk from the organization to the individual. Consent can 1) ensure alignment with any legal or policy requirements regarding notice and consent, and 2) enable reliable assumptions by subjects about how a system is processing their information. Furthermore, specific consent type can provide additional granularity around the type of consent agreed to. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
 
 ##### Acceptable Uses
 
