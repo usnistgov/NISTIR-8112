@@ -26,7 +26,7 @@ Attribute schema metadata provide information that is applicable to the attribut
 | **Allowed Values** | A defined set of allowed values for the attribute         |             None                                  |                                                    
 |**Format**| A defined format in which the attribute will be expressed| None|
 | **Verification Frequency** |The frequency at which the AP will re-verify the attribute| None |
-| **Consent** | The type of consent obtained | None |
+| **Data Processing** | Type of legal requirement | None |
 
 
 #### 3.1.1. Description
@@ -45,9 +45,8 @@ This metadata element describes the format for expressing attribute's value. For
 
 In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this attribute schema metadata element may negate the need for some of the currency attribute value metadata elements discussed later in this paper.
 
-#### 3.1.5. Consent
-The consent metadata element ensures that consent is obtained, if required, before a system processes a subject’s PII. Consent transfers the risk that arises from the processing of PII from an organization to an individual; thus, it should be used when individuals can reasonably be expected to understand and accept any privacy risks arising from their authorization. Obtaining consent can 1) ensure alignment with any legal or policy requirements regarding notice and consent, and 2) enable reliable assumptions by subjects about how a system is processing their information. 
-
+#### 3.1.5. Data Processing
+The data processing metadata element ensures that the involved parties identify a legal basis before processing a subject's PII. The legal basis may be, for instance: consent, contract, legal obligation, public interest.
 
 ### 3.2. Attribute Value Metadata
 
@@ -178,7 +177,7 @@ As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on at
 
 #### Consent Type
 
-As stated earlier in section 3.1.5, obtaining consent before a system processes a subject’s PII is a way to transfer risk from the organization to the individual. Consent can 1) ensure alignment with any legal or policy requirements regarding notice and consent, and 2) enable reliable assumptions by subjects about how a system is processing their information. Furthermore, specific consent type can provide additional granularity around the type of consent agreed to. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
+Obtaining consent before a system processes a subject’s PII is a way to transfer risk from the organization to the individual. Consent can 1) ensure alignment with any legal or policy requirements regarding notice and consent, and 2) enable reliable assumptions by subjects about how a system is processing their information. Furthermore, specific consent type can provide additional granularity around the type of consent agreed to. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
 
 ##### Acceptable Uses
 
