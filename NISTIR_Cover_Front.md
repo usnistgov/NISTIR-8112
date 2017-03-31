@@ -155,7 +155,7 @@ This document defines a set of optional elements to support cross-organization c
 | **Allowed Values** | A defined set of allowed values for the attribute  |   None  |     
 |**Format**| A defined format in which the attribute will be expressed| None |
 | **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute|None |
-| **Consent** | The type of consent obtained | None |
+| **Data Processing** | Describes the basis for processing attributes and attribute values | None |
 
 * **Attribute Value Metadata (AVM)** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible AVM for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of AVM, proposed values for those metadata fields, and rationale for their inclusion.
 
@@ -172,6 +172,7 @@ This document defines a set of optional elements to support cross-organization c
 **Last Refresh** |The date and time when the attribute was last refreshed |No restrictions
 **Expiration Date** |The date an attribute’s value is considered to be no longer valid|No restrictions
 **Date Consented** | The date on which subject consent for release of the attribute value was acquired | No restrictions
+**Consent Type** | Indicates the type of consent | No restrictions
 **Acceptable Uses** |Allowed use conditions for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
