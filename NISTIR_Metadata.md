@@ -4,7 +4,11 @@
 
 ## 3. Metadata
 
+<<<<<<< HEAD
 The term *attribute* is used throughout this document to refer to a defined characteristic of an individual — often referred to as subject attributes. *Home address* is one example of an attribute of a person. The term *attribute value* is used throughout to refer to a specifically assigned value for an attribute; for example, Jane Doe's *home address* is *1 Main St., Anytown, VA 11111*. Attribute providers (APs) collect and maintain these elements—the attribute and its value[s]—together. In a federated environment, these attributes are asserted to the RP to support the provision of a benefit or service, or when authorizing access to a protected resource. Attributes and attribute values may also be associated with devices or non-person entities; however, these entities are not addressed in this document.
+=======
+The term *attribute* is used throughout this document to refer to a defined characteristic of an individual — often referred to as subject attributes. *Home address* is one example of an attribute of a person. The term *attribute value* is used throughout to refer to a specifically assigned value for an attribute; for example, Jane Doe's *home address* is *1 Main St., Anytown, VA 11111*. Attribute providers collect and maintain these elements—the attribute and its value[s]—together. In a federated environment, these attributes are asserted to the relying party (RP) to support the provision of a benefit or service, or when authorizing access to a protected resource. Attributes and attribute values may also be associated with devices or non-person entities; however, these entities are not addressed in this document. For the purposes of this document, all attributes are deemed to be personally identifiable information (PII), and organizations should consider any security risks related to transmitting and retaining attributes, in addition to the various privacy considerations provided in this document.
+>>>>>>> refs/remotes/origin/nist-pages
 
 Oftentimes, a set of asserted attributes and their values is enough on its own to support access to systems or applications. In the instance above, the information provided may be sufficient to allow Jane to benefit from a service her town provides for residents. Alternatively, in more sensitive contexts (e.g., national security systems, systems that enable access to personally identifiable information), RPs may want additional information about the specific attributes and attribute values they are receiving. Who provided Jane's home address? Did she self-assert it, or did the AP retrieve it from a database, such as the DMV or her employer? These _data of the attributes_, or *metadata*, enable the RP to interrogate the attribute value *and* information about the value itself during authorization policy evaluation. Information about the value may include where the attribute came from, whether it has been verified, and how often it is updated.  This allows the RP to make a more informed decision about whether or not to *trust* an attribute when making access control decisions.
 
@@ -26,7 +30,7 @@ ASM provide information that is applicable to the attribute being asserted, rega
 | **Allowed Values** | A defined set of allowed values for the attribute         |             None                                  |                                                    
 |**Format**| A defined format in which the attribute will be expressed| None|
 | **Verification Frequency** |The frequency at which the AP will re-verify the attribute| None |
-| **Consent** | The type of consent obtained | None |
+| **Data Processing** | Type of requirement | None |
 
 
 #### 3.1.1. Description
@@ -45,9 +49,8 @@ This metadata element describes the format for expressing attribute's value. For
 
 In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this ASM element may negate the need for some of the currency AVM elements discussed later in this paper.
 
-#### 3.1.5. Consent
-There may be legal requirements or trust framework policies that subjects must consent to the disclosure or collection of their information. Therefore, to avoid placing the RP in violation of data collection requirements, it is beneficial for the AP and the RP to agree on when subject consent is required before the attributes are sent to the RP and what type of consent is required (e.g. explicit, implied, opt-in, opt-out). 
-
+#### 3.1.5. Data Processing
+There may be legal requirements or trust framework policies that impose a specified basis for the processing of data. Therefore, to avoid placing the RP in violation of any such requirements, it is beneficial for the AP and the RP to agree on whether a basis is required for the processing of the attributes before the attributes are sent to the RP and the type of basis (e.g. subject consent, contract, legal obligation, public interest).
 
 ### 3.2. Attribute Value Metadata
 
@@ -166,6 +169,7 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
 **Date Consented** | The date on which subject consent for release of the attribute value was acquired| No restrictions
+**Consent Type** | Indicates the type of consent| No restrictions
 **Acceptable Uses** |Allowed use conditions for entities that receive attributes| No restrictions
 **Cache Time To Live** |The length of time for which an attribute value may be cached| No restrictions
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
@@ -173,7 +177,11 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 
 ##### Date Consented
 
-As discussed in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying the type of subject consent obtained when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. 
+As referenced in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems.
+
+#### Consent Type
+
+As referenced in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand the specific consent type where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
 
 ##### Acceptable Uses
 

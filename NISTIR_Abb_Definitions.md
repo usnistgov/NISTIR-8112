@@ -54,6 +54,10 @@ A CSP in a federation that manages the subject's primary authentication credenti
 
 Structured information that describes, explains, locates, or otherwise makes it easier to retrieve, use, or manage an information resource. Metadata is often called data about information or information about information.
 
+#### Personally Identifiable Information (PII)
+
+Information that can be used to distinguish or trace an individual’s identity, either alone or when combined with other information that is linked or linkable to a specific individual. 
+
 #### Relying Party (RP)
 
 An entity that relies upon a subject’s authenticator(s) and credentials or an IDP's assertion of a subject’s identity, typically to process a transaction or to grant access to information or a system.
