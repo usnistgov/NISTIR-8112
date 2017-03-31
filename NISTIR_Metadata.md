@@ -30,7 +30,7 @@ ASM provide information that is applicable to the attribute being asserted, rega
 | **Allowed Values** | A defined set of allowed values for the attribute         |             None                                  |                                                    
 |**Format**| A defined format in which the attribute will be expressed| None|
 | **Verification Frequency** |The frequency at which the AP will re-verify the attribute| None |
-| **Data Processing** | Type of requirement | None |
+| **Data Processing** | Describes the basis for processing attributes and attribute values | None |
 
 
 #### 3.1.1. Description
