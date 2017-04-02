@@ -42,8 +42,8 @@ In this scenario privacy considerations factoring into the selection of AVM are 
 
 Based on the scenario’s authorization and privacy considerations, the table below illustrates the AVM that is applied to support appropriate authorization decisions by the relying agency. It also provides notional values.
 
-|**Element**  |**Value** |
-|--------|----------|------|
+| **Element** | **Value** |
+|------|------|
 | **Verifier** | **Origin** - The clearance was verified by the originating entity—which in this case is the same as the provider|  
 | **Verification Method**| **Record Check** - The attribute value was verified against the sponsoring agency's clearance database|
 | **Last Verification** |	**6/10/16** (assume an access request date of 7/1/2016)|
@@ -189,7 +189,7 @@ In this use case, some metadata elements with privacy implications, such as `pro
 Based on the scenario’s authorization and privacy considerations, the table below illustrates the AVM that is applied to support appropriate decisions by the VA system. It also provides notional values.
 
 |**Element**  |**Value** |
-|--------|----------|------|
+|------|------|
 | **Verifier** | **Provider** - The clearance was verified by the IDP (also acting as the AP in this instance)|  
 | **Verification Method**| **Document verification with Record Check** - The attribute value was verified against a DD-214 provided by Jane and was checked against a National Archives and Records Administration database|
 
@@ -267,7 +267,7 @@ In this use case, certain metadata elements are necessary to demonstrate complia
 Based on the scenario’s authorization and privacy considerations, the table below illustrates the AVM that is applied to support appropriate authorization decisions by the FBI. It also provides notional values.
 
 |**Element**  |**Value** |
-|--------|----------|------|
+|------|------|
 | **Verifier** | **Origin** - The statuses and verification dates for both Sworn LEO and CJIS Privacy Training would be verified by the originating entity (LAPD) |  
 | **Last Verification (Sworn LEO)** |	**6/15/16** |
 | **Last Verification (CJIS Privacy Training)** |	**6/1/15** |
