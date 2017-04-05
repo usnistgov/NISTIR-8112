@@ -18,10 +18,6 @@ Access control based on attributes associated with subjects, objects, targets, i
 
 A statement asserting a property of a subject without necessarily containing authentication or other identity information, independent of format. For example, for the attribute 'birthday', a claim could be 'older than 18' or 'born in December'.
 
-#### Attribute Schema Metadata (ASM)
-
-Data providing information about the context and structure of an attribute. See metadata.
-
 #### Attribute Provider (AP)
 
 Manages and provides assertions of identity attributes to other relying and federated parties.
@@ -29,6 +25,10 @@ Manages and provides assertions of identity attributes to other relying and fede
 #### Attribute Provider Statement (APS)
 
 A document that captures the security, privacy, data protection, and attribute management practices of a given attribute provider or party acting as an attribute provider for a given set of transactions.
+
+#### Attribute Schema Metadata (ASM)
+
+Data providing information about the context and structure of an attribute. See metadata.
 
 #### Attribute Value Metadata (AVM)
 
@@ -62,6 +62,6 @@ Information that can be used to distinguish or trace an individual’s identity,
 
 An entity that relies upon a subject’s authenticator(s) and credentials or an IDP's assertion of a subject’s identity, typically to process a transaction or to grant access to information or a system.
 
-#### Trust Time
+#### Trust-time
 
 Refers to the process of establishing agreements between framework participants in order to develop metadata schema requirements consistent with community needs. 

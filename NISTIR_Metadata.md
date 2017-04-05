@@ -6,17 +6,17 @@
 
 The term *attribute* is used throughout this document to refer to a defined characteristic of an individual — often referred to as subject attributes. *Home address* is one example of an attribute of a person. The term *attribute value* is used throughout to refer to a specifically assigned value for an attribute; for example, Jane Doe's *home address* is *1 Main St., Anytown, VA 11111*. Attribute providers collect and maintain these elements—the attribute and its value[s]—together. In a federated environment, these attributes are asserted to the relying party (RP) to support the provision of a benefit or service, or when authorizing access to a protected resource. Attributes and attribute values may also be associated with devices or non-person entities; however, these entities are not addressed in this document. For the purposes of this document, all attributes are deemed to be personally identifiable information (PII), and organizations should consider any security risks related to transmitting and retaining attributes, in addition to the various privacy considerations provided in this document.
 
-Oftentimes, a set of asserted attributes and their values is enough on its own to support access to systems or applications. In the instance above, the information provided may be sufficient to allow Jane to benefit from a service her town provides for residents. Alternatively, in more sensitive contexts (e.g., national security systems, systems that enable access to personally identifiable information), RPs may want additional information about the specific attributes and attribute values they are receiving. Who provided Jane's home address? Did she self-assert it, or did the attribute provider (AP) retrieve it from a database, such as the DMV or her employer? These _data of the attributes_, or *metadata*, enable the RP to interrogate the attribute value *and* information about the value itself during authorization policy evaluation. Information about the value may include where the attribute came from, whether it has been verified, and how often it is updated.  This allows the RP to make a more informed decision about whether or not to *trust* an attribute when making access control decisions.
+Oftentimes, a set of asserted attributes and their values is enough on its own to support access to systems or applications. In the instance above, the information provided may be sufficient to allow Jane to benefit from a service her town provides for residents. Alternatively, in more sensitive contexts (e.g., national security systems, systems that enable access to personally identifiable information), RPs may want additional information about the specific attributes and attribute values they are receiving. Who provided Jane's home address? Did she self-assert it, or did the AP retrieve it from a database, such as the DMV or her employer? These _data of the attributes_, or *metadata*, enable the RP to interrogate the attribute value *and* information about the value itself during authorization policy evaluation. Information about the value may include where the attribute came from, whether it has been verified, and how often it is updated.  This allows the RP to make a more informed decision about whether or not to *trust* an attribute when making access control decisions.
 
 ![](media/Canvas 2.png)
 
-The attribute schema metadata and attribute value metadata listed in each section of this schema are not mandatory. Collectively, these elements aim to support transactional needs in federations and trust frameworks across the private and public sectors. NIST envisions that communities and federations will leverage the included metadata elements to develop their own profiles. In addition, this schema supports extensibility for instances when the information contained herein is not sufficient for federated partners.
+The ASM and AVM listed in each section of this schema are not mandatory. Collectively, these elements aim to support transactional needs in federations and trust frameworks across the private and public sectors. NIST envisions that communities and federations will leverage the included metadata elements to develop their own profiles. In addition, this schema supports extensibility for instances when the information contained herein is not sufficient for federated partners.
 
 When implementing this schema, organizations must evaluate and understand both the authorization considerations **and** the privacy implications associated with a given use case or transaction type. With the additional granularity that attribute schema and attribute value metadata can provide, new information can be revealed which may provide a broader profile of an individual than was intended or anticipated. For instance, asserting that the verifier of Jane's address is her employer reveals more than just *1 Main St., Anytown, VA* to the receiving entity. The receiving entity now knows who she works for in addition to where she resides, something that Jane may not be aware of and may not wish to reveal. When deciding which metadata elements to select, the involved parties should conduct a privacy risk assessment to consider these possibilities, and to identify the potential negative impacts to privacy that could arise from including certain metadata elements. To guide this privacy risk assessment process, privacy considerations associated with the metadata elements are included throughout this document. This is certainly not an exhaustive list; there might be additional privacy considerations apart from those listed, and the listed considerations might change over time. Ultimately, the listed considerations may aid in deciding which elements of metadata to include, maximizing the benefit of a transaction while minimizing problems for the individuals associated with the metadata. If a metadata element does reveal information about an individual, but is still necessary to a transaction and thus must be included, the appropriate parties should consider how to provide visibility of the metadata to the individual, so he or she can predict the transfer of certain information.
 
 ### 3.1. Attribute Schema Metadata
 
-Attribute schema metadata provide information that is applicable to the attribute being asserted, regardless of the value of that attribute. Attribute schema metadata are intended to be static, discussed, and agreed upon by federated parties in advance of the actual assertion.  For this reason, attribute schema metadata are considered "trust time" metadata and can be encapsulated in agreements such as attribute provider statements (APS), contracts, or trust frameworks. [Table 1](#table1) provides the list of attribute schema metadata that organizations can consider when establishing identity federation agreements. This is unlike attribute value metadata, which are dynamic and thus asserted and evaluated at runtime.
+ASM provide information that is applicable to the attribute being asserted, regardless of the value of that attribute. ASM are intended to be static, discussed, and agreed upon by federated parties in advance of the actual assertion.  For this reason, ASM are considered "trust-time" metadata and can be encapsulated in agreements such as attribute provider statements (APS), contracts, or trust frameworks. [Table 1](#table1) provides the list of ASM that organizations can consider when establishing identity federation agreements. This is unlike AVM, which are dynamic and thus asserted and evaluated at run-time.
 
 <a name="table1"></a> **Table 1: Attribute Schema Metadata**
 
@@ -35,26 +35,26 @@ The `description` metadata element ensures that all entities participating in th
 
 #### 3.1.2. Allowed Values
 
-This metadata element provides a common, agreed-to set of values for an attribute. This ensures that when an attribute provider transmits the attribute, the receiving organization is able to appropriately process the values. Variations between provider and RP in expressing values for an attribute—for example, a value outside of an expected range—adversely impact interoperability and performance of authorization activities. For this reason, resolution of this metadata element is highly recommended.
+This metadata element provides a common, agreed-to set of values for an attribute. This ensures that when an AP transmits the attribute, the receiving organization is able to appropriately process the values. Variations between provider and RP in expressing values for an attribute—for example, a value outside of an expected range—adversely impact interoperability and performance of authorization activities. For this reason, resolution of this metadata element is highly recommended.
 
 #### 3.1.3. Format
 
-This metadata element describes the format for expressing attribute's value. For example, the attribute `height` may always be expressed in meters rather than centimeters. As with `allowed values`, up front agreement around the format of expressed attributes supports technical interoperability of assertions during run time as well as appropriate policy evaluation of the attributes when determining access to resources.
+This metadata element describes the format for expressing attribute's value. For example, the attribute `height` may always be expressed in meters rather than centimeters. As with `allowed values`, up front agreement around the format of expressed attributes supports technical interoperability of assertions during run-time as well as appropriate policy evaluation of the attributes when determining access to resources.
 
 #### 3.1.4. Verification Frequency
 
-In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this attribute schema metadata element may negate the need for some of the currency attribute value metadata elements discussed later in this paper.
+In most situations, it is highly beneficial for the RP and the AP to agree to set rates for periodic verification of attribute values. This metadata element captures the frequency with which this re-verification occurs, to ensure that both parties have established valid verification intervals. When determining if verification frequency is appropriate to include for a particular attribute, the parties should consider the fluidity of the attribute and its value; for example, date of birth may never need to be re-verified. They should also consider the risk associated with the transaction, or the environment in which the RP and AP are operating. Including this ASM element may negate the need for some of the currency AVM elements discussed later in this paper.
 
 #### 3.1.5. Data Processing
 There may be legal requirements or trust framework policies that impose a specified basis for the processing of data. Therefore, to avoid placing the RP in violation of any such requirements, it is beneficial for the AP and the RP to agree on whether a basis is required for the processing of the attributes before the attributes are sent to the RP and the type of basis (e.g. subject consent, contract, legal obligation, public interest).
 
 ### 3.2. Attribute Value Metadata
 
-While attribute schema metadata are important, it is the granular attribute *value* metadata—for example, information about attribute values' authoritativeness, the processes used to create or establish them, and the frequency with which they are refreshed—that is designed to enable greater trust across systems. RPs can establish semantics and syntax of attribute value metadata at trust time in order to make authorization decisions about access to resources or benefits at run-time. Regardless of the access control methodology leveraged by an organization, integrating attribute value metadata into decision support systems can enable more informed decisions and support richer policy development.
+While ASM are important, it is the granular attribute *value* metadata—for example, information about attribute values' authoritativeness, the processes used to create or establish them, and the frequency with which they are refreshed—that is designed to enable greater trust across systems. RPs can establish semantics and syntax of AVM at trust-time in order to make authorization decisions about access to resources or benefits at run-time. Regardless of the access control methodology leveraged by an organization, integrating AVM into decision support systems can enable more informed decisions and support richer policy development.
 
 #### 3.2.1. Metadata Categories
 
-While attribute value metadata may be used for many purposes by RPs, certain metadata elements are more commonly tied to specific types of decisions. To facilitate RP decision-making and increase interoperability, this schema establishes five categories based on common uses of metadata: *accuracy*, *currency*, *provenance*, *privacy*, and *classification*. Each category of metadata elements is important for enabling the federation of attributes across a community or environment. Metadata associated with *accuracy*, *currency*, and *provenance* may facilitate cross-system trust by establishing a consistent picture of the attribute value itself and the practices that generated that value, while *privacy* and *classification* can be leveraged to convey specific restrictions and protections that may need to be put in place based on certain data types, transactions, or use cases. [Table 2](#table2) presents the five categories and their definitions. [Table 3](#table3) provides a breakdown of the number of metadata elements by category.
+While AVM may be used for many purposes by RPs, certain metadata elements are more commonly tied to specific types of decisions. To facilitate RP decision-making and increase interoperability, this schema establishes five categories based on common uses of metadata: *accuracy*, *currency*, *provenance*, *privacy*, and *classification*. Each category of metadata elements is important for enabling the federation of attributes across a community or environment. Metadata associated with *accuracy*, *currency*, and *provenance* may facilitate cross-system trust by establishing a consistent picture of the attribute value itself and the practices that generated that value, while *privacy* and *classification* can be leveraged to convey specific restrictions and protections that may need to be put in place based on certain data types, transactions, or use cases. [Table 2](#table2) presents the five categories and their definitions. [Table 3](#table3) provides a breakdown of the number of metadata elements by category.
 
 The sections that follow list and provide details on the elements in each category.
 
@@ -75,9 +75,9 @@ The sections that follow list and provide details on the elements in each catego
 | Provenance |3|
 | Accuracy |2|
 | Currency|3|
-| Privacy|4|
+| Privacy|5|
 | Classification |2|
-|**Total**|**14**|
+|**Total**|**15**|
 
 #### 3.2.1.1. Provenance Metadata
 
@@ -95,7 +95,7 @@ The `Origin` element conveys the name of the entity that established the initial
 
 ##### Provider
 
-This specifies the name of the entity that supplies the attribute value to the RP. This does not have to be the attribute provider itself. This element enables RPs to understand and evaluate individual attribute values that may be included in a bundle of attributes. For example, if a full service credential provider generates an assertion with several identity attributes provided by multiple APs, the `provider` element enables the RP to understand, at a granular level, where each has come from and determine whether or not that value can be used for access to specific resources. In instances where a single attribute is asserted directly to the RP, this element may not be necessary since the assertion itself will carry the provider information as well as a certificate or digital signature.
+This specifies the name of the entity that supplies the attribute value to the RP. This does not have to be the AP itself. This element enables RPs to understand and evaluate individual attribute values that may be included in a bundle of attributes. For example, if a full service credential provider generates an assertion with several identity attributes provided by multiple APs, the `provider` element enables the RP to understand, at a granular level, where each has come from and determine whether or not that value can be used for access to specific resources. In instances where a single attribute is asserted directly to the RP, this element may not be necessary since the assertion itself will carry the provider information as well as a certificate or digital signature.
 
 ##### Pedigree
 
@@ -121,10 +121,10 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 ##### Verifier
 
-Verified attributes allow RPs to make informed decisions around whether or not to trust an attribute's value during policy evaluation. In addition, understanding *who* verified an attribute value may influence the RP's decision about whether or not to accept an attribute value as part of an access control decision. The `verifier` metadata element is intended to answer this "who" question. Namely: did the organization that established the attribute value perform the verification themselves or was the verification done at a later date by the AP? Acceptable values for this metadata field include:
+Verified attributes allow RPs to make informed decisions around whether or not to trust an attribute's value during policy evaluation. In addition, understanding *who* verified an attribute value may influence the RP's decision about whether or not to accept an attribute value as part of an access control decision. The `verifier` metadata element is intended to answer this "who" question. Namely, did the organization that established the attribute value perform the verification themselves or was the verification done at a later date by the AP? Acceptable values for this metadata field include:
 
 1. **Origin** - The attribute's value was verified by the entity that issued or created it (e.g., a Social Security Number verified by the Social Security Administration).
-1. **Provider** - The attribute's value was verified by the attribute provider.
+1. **Provider** - The attribute's value was verified by the AP.
 1. **Not Verified** - The value of the attribute was not verified.
 
 ##### Verification Method
@@ -132,10 +132,10 @@ Verified attributes allow RPs to make informed decisions around whether or not t
 This metadata element contains information on the process used to confirm that an attribute value is both true *and* belongs to the specified individual. This is sometimes necessary to support an authorization decision, but may not always be required. The acceptable values for `verification method` are intended to provide insight into the verification processes used by providers and enable greater confidence in a given attribute's value. This is particularly beneficial if there are multiple providers for instances of a single attribute. Recommended values for this element are:
 
 1. **Document Verification** - The attribute value was verified by inspecting a document that is acceptable to the RP (e.g., driver's license, medical record, utility bill). Transactional participants may want to determine the types of acceptable documents for attribute value verification in advance.
-1. **Record Verification** - The attribute value was verified against an authoritative record or database. For the purposes of this schema, the term "authoritative" is used consistently with its definition in [SP 800-63-3](https://pages.nist.gov/800-63-3).
+1. **Record Verification** - The attribute value was verified against an authoritative record or database. For the purposes of this schema, the term "authoritative" is used consistently with its definition in \[[SP 800-63-3](#SP 800-63-3)\].
 1. **Document Verification with Record Verification** - The attribute value was verified against both an acceptable document and an authoritative record or database.
 2. **Proof of Possession** - Confirmation of an individual’s ability to demonstrate possession of a device or account is used to verify the attribute’s value. Certain attributes and their values, such as phone numbers and email addresses, can be verified by direct communication (SMS, voice, or email) with the entity to which the value is attributed. This method of verification may not be applicable to all attribute values. However, to a certain set of attributes, this is a legitimate approach to determining that the attribute's value is both valid and associated with the appropriate individual.
-1. **Probabilistic Verification** - The attribute provider has compared the attribute’s value to multiple non-authoritative data sources to increase the probability that the attribute value is true and belongs to the appropriate individual. For example, rather than verifying a user address with the post office, an AP may compare the shipping addresses from multiple  e-commerce transactions to increase confidence in the attributes’ value. There may be many reasons an AP leverages “probabilistic verification” including the lack of available authoritative sources or limited automated capabilities to leverage authoritative sources. Methods of 'probabilistic verification' should be defined in the provider's APS and should be carefully considered for potentially negative privacy impacts. Probailistic Verification should not be confused with the concept of `Derived` (a recommended value for the Pedigree element), which focuses on generating the attribute's value rather than verifying it.
+1. **Probabilistic Verification** - The AP has compared the attribute’s value to multiple non-authoritative data sources to increase the probability that the attribute value is true and belongs to the appropriate individual. For example, rather than verifying a user address with the post office, an AP may compare the shipping addresses from multiple  e-commerce transactions to increase confidence in the attributes’ value. There may be many reasons an AP leverages “probabilistic verification” including the lack of available authoritative sources or limited automated capabilities to leverage authoritative sources. Methods of 'probabilistic verification' should be defined in the provider's APS and should be carefully considered for potentially negative privacy impacts. Probabilistic Verification should not be confused with the concept of `Derived` (a recommended value for the Pedigree element), which focuses on generating the attribute's value rather than verifying it.
 1. **Not Verified** - The attribute's value has not been verified.
 
 #### 3.2.1.3. Currency Metadata
@@ -171,7 +171,7 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 **Data Deletion Date** | Indicates the date the attribute is to be deleted from records| No restrictions
 
 
-#### Date Consented
+##### Date Consented
 
 As referenced in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems.
 
@@ -205,8 +205,8 @@ This metadata element refers to long-term holding of attribute values. Minimizin
 
 **Metadata Element**|**Description**|**Recommended Values**
 --------------------|--------------|------------
-**Classification** | The security classification level of the attribute| -"Unclassified" <br> -"Controlled Unclassified" <br> -"Confidential" <br> -"Secret" <br> -"Top Secret"
-**Releasability** |  The restrictions on who may receive an attribute value|-"NATO" <br> -"FVEY" <br> -"NOFORN" <br> -"Public Release" <br> -"None"
+**Classification** | The security classification level of the attribute| -"Unclassified" <br> -"Controlled Unclassified" <br> -"Confidential" <br> -"Secret" <br> -"Top Secret" <br> -"Company Confidential"
+**Releasability** |  The restrictions on who may receive an attribute value|-"NATO" <br> -"NOFORN" <br> -"FVEY" <br> -"Public Release" <br> -"Externally Releasable for Business Purposes" <br> -"Do Not Release" <br> -"None"
 
 
 
@@ -215,7 +215,7 @@ This metadata element refers to long-term holding of attribute values. Minimizin
 Making certain attribute values available to RPs can carry national security implications. In situations where this may be the case, identification of such attribute values at the time of exchange can be absolutely crucial to ensuring that they are appropriately handled and protected across the attribute's lifecycle. The recommended values for use in this schema are:
 
 1. **Unclassified** - Unclassified attribute values are those that carry with them no national security implications. This does not, however, indicate that they are not sensitive, not in need of specific protections, or available publicly.
-1. **Controlled Unclassified** - These attribute values are not sensitive enough to have a negative impact on national security, but are none the less sensitive enough that they should be protected from improper access or exposure (e.g., FOUO information).
+1. **Controlled Unclassified** - These attribute values are not sensitive enough to have a negative impact on national security, but are none the less sensitive enough that they should be protected from improper access or exposure (e.g., For Official Use Only or "FOUO" information).
 1. **Confidential** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause damage to national security.
 1. **Secret** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
 1. **Top Secret** - Attribute values, which if subject to unauthorized disclosure could be expected to cause exceptionally grave damage to national security.
@@ -225,9 +225,9 @@ As with all classified information, the determination of the classification leve
 
 ##### Releasability
 
-Refers to restrictions that may be placed on the releaseability of an attribute's value. The recommended values for this element include:
+Refers to restrictions that may be placed on the releasability of an attribute's value. The recommended values for this element include:
 
-1. **NATO** - The attribute's value is releasable to NATO allies only and should not be distributed to other foreign nationals.
+1. **NATO** - The attribute's value is releasable to North Atlantic Treaty Organization allies only and should not be distributed to other foreign nationals.
 2. **NOFORN** - The attribute's value is not releasable to any foreign nationals.
 3. **FVEY** - The attribute's value is releasable to Five Eye nations only.
 1. **Public Release** - The attribute's value is explicitly approved for public release.
