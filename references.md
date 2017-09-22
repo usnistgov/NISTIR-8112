@@ -15,4 +15,4 @@
 <a name="OIX Attribute Exchange Trust Framework Specification"></a>[OIX Attribute Exchange Trust Framework] The Open Identity Exchange, Attribute Exchange Trust Framework Specification: Technical Specification V1. July 02, 2013. Available at: 
 http://openidentityexchange.org/wp-content/uploads/2014/06/OIX-AXN-Trust-Framework-Specification-1.0-7-5-2013.pdf.
 
-<a name="OMB A-130"></a>[OMB A-130] OMB Circular A-130, *Managing Information as a Strategic Resource*, July 27, 2016, available at: https://obamawhitehouse.archives.gov/sites/default/files/omb/assets/OMB/circulars/a130/a130revised.pdf
+<a name="OMB A-130"></a>[OMB A-130] OMB Circular A-130, *Managing Information as a Strategic Resource*, July 27, 2016, available at: https://obamawhitehouse.archives.gov/sites/default/files/omb/assets/OMB/circulars/a130/a130revised.pdf.

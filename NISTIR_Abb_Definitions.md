@@ -40,7 +40,7 @@ The decision to permit or deny a subject access to resources (e.g., network, dat
 
 #### Credential Service Provider (CSP)
 
-An  entity that issues digital credentials to subjects and issues or registers authenticators for subjects' use.  A CSP may be an independent third party, or may issue credentials for its own use. A CSP may provide and verify attributes or may include attributes provided or verified by other entities.
+An  entity that issues digital credentials to subjects and issues or registers authenticators for subjects' use.  A CSP may be an independent third party, or may issue credentials for its own use. A CSP may provide and verify attributes or may assert attributes provided and verified by other entities.
 
 #### Federation
 

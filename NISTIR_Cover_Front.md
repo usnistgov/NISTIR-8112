@@ -108,7 +108,7 @@ outreach efforts in information system security, and its collaborative
 activities with industry, government, and academic organizations.
 
 ### Abstract
-This NIST Internal Report contains a metadata schema for attributes that may be asserted about an individual during an online transaction. The schema can be used by relying parties to enrich access control policies, as well as during run-time evaluation of an individual's ability to access protected resources, and for an individual's. Attribute metadata could also create the possibility for data sharing permissions and limitations on individual data elements. There are other possible applications of attribute metadata, such as evaluation and execution of business logic in decision support systems; however the metadata contained herein is focused on supporting an organization's risk-informed authorization policies and evaluation.
+This NIST Internal Report contains a metadata schema for attributes that may be asserted about an individual during an online transaction. The schema can be used by relying parties to enrich access control policies, as well as during run-time evaluation of an individual's ability to access protected resources. Attribute metadata could also create the possibility for data sharing permissions and limitations on individual data elements. There are other possible applications of attribute metadata, such as evaluation and execution of business logic in decision support systems; however the metadata contained herein is focused on supporting an organization's risk-informed authorization policies and evaluation.
 
 ### Keywords
 Access control, assertions, attributes, attribute metadata, attribute schema metadata, attribute values, attribute value metadata, authorization, federation, identity, identity federation, information security, metadata, privacy, risk, risk management, security, trust
@@ -147,15 +147,15 @@ This NIST Internal Report proposes attribute schema metadata and attribute value
 
 This document defines a set of optional elements to support cross-organization confidence in attribute assertions as well as the semantics and syntax required to support interoperability. The schema contains two core components, `attribute schema metadata` and `attribute value metadata` which, along with their suggested elements, are described below:
 
-* **Attribute Schema Metadata (ASM)** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing an attribute sharing agreement (trust-time) and the rationale for their inclusion.
+* **Attribute Schema Metadata (ASM)** - Metadata for the attribute itself, not the specific attribute’s value. For example, this metadata may describe the `format` in which the attribute will be transmitted, such as that height will always be sent in inches regardless of what the actual value may be (e.g., `height= 72`). This schema provides a set of attribute metadata from which to choose when constructing and executing an attribute sharing agreement (often called trust-time) and the rationale for their inclusion.
 
 | Metadata            | Description                                                                          | Recommended Values                                        |
 | ------------------- |------------------------------------------------------------------------------------|---------------------------------------------|
-| **Description** | An informative description of the attribute |   None |
-| **Allowed Values** | A defined set of allowed values for the attribute  |   None  |     
-|**Format**| A defined format in which the attribute will be expressed| None |
-| **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute|None |
-| **Data Processing** | Describes the basis for processing attributes and attribute values | None |
+| **Description** | An informative description of the attribute |   Any |
+| **Allowed Values** | A defined set of allowed values for the attribute  |   Any  |     
+|**Format**| A defined format in which the attribute will be expressed| Any |
+| **Verification Frequency** |The frequency at which the Attribute Provider will re-verify the attribute| Any |
+| **Data Processing** | Describes the basis for processing attributes and attribute values | Any |
 
 * **Attribute Value Metadata (AVM)** - These elements focus on the asserted value for the attribute. Following the same example as above, the attribute value would be the actual height. A possible AVM for the height could be the name of the originating organization that provisioned the height, for example the DMV in the subject's home state. This schema provides a set of AVM, proposed values for those metadata fields, and rationale for their inclusion.
 
@@ -180,8 +180,9 @@ This document defines a set of optional elements to support cross-organization c
 **Releasability** |  The restrictions regarding to whom an attribute value may be released | -"NATO" <br> -"NOFORN" <br> -"FVEY" <br> -"Public Release" <br> -"Externally Releasable for Business Purposes" <br> -"Do Not Release" <br> -"None"
 
 
-The schema in this document is intended to demonstrate the value of attribute schema and attribute value metadata in supporting U.S. Federal Government use cases and it is envisioned that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
-Though this is a finalized document, this schema will be developed further in future revisions based upon implementation feedback received by the community.
+The schema in this document is intended to demonstrate the value of attribute schema and attribute value metadata in supporting U.S. federal government use cases. NIST envisions that the core set of metadata proposed here can serve as a library or menu from which both commercial and federal implementers can draw common semantics, syntaxes, and values to support their specific needs. This will serve as a jumping off point for the development of a metadata standard that can enable greater federation across markets and sectors.
+
+Though this is a finalized document, this schema will be developed further in future revisions, based upon implementation feedback received by the community.
 
 ## Table of Contents
 
