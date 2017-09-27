@@ -103,7 +103,7 @@ This specifies the name of the entity that supplies the attribute value to the R
 
 ##### Pedigree
 
-`Pedigree` refers to the attribute value's relationship to an authoritative source. Essentially, it allows for the RP to better understand the process by which an attribute's value is generated and to determine whether or not it is from an acceptable authoritative source. Recommended values for this element include:
+`Pedigree` refers to the attribute value's relationship to an authoritative source. Essentially, it allows the RP to understand better the process by which an attribute's value is generated and to determine whether or not it is from an acceptable authoritative source. Recommended values for this element include:
 
 1. **Authoritative** - The attribute's value was acquired directly from the source of authority. For example, an AP has received a driver's license number directly from the state DMV which issued the license.
 1. **Sourced** - The attribute's value has been acquired from one or more non-authoritative sources. For example, an AP purchases a driver's license number from a third-party data aggregator.
@@ -112,7 +112,7 @@ This specifies the name of the entity that supplies the attribute value to the R
 
 Taken in conjunction with the accuracy metadata, this information can enable the RP to better understand the origin of an attribute value, how it relates to its authoritative source, and how it has been verified — all of which help an RP establish a more complete picture of the value's usefulness and trustworthiness.
 
-**Privacy Considerations**: Provenance metadata reveal information about the relationship between the data source and the subject which could allow for profiling of the subject beyond the purpose of authorization and which the subject may not know is occurring. For example, the origin value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences for a subject's privacy. 
+**Privacy Considerations**: Provenance metadata reveal information about the relationship between the data source and the subject which could allow profiling of the subject beyond the purpose of authorization and which the subject may not know is occurring. For example, the origin value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences for a subject's privacy. 
 
 Selection and use of these metadata elements should be carefully considered based on both authorization needs as well as a privacy risk assessment. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value’s verification method without the origin element-the value of which may not outweigh the risk to privacy. The original source of the information may not be essential as long as the value has been verified using an acceptable method. To the extent selection of these elements are operationally necessary, RPs may manage the privacy risk through additional policies such as limiting use of the value outside of the authorization process or retaining the record of the verification without the actual value.
 
@@ -179,11 +179,11 @@ Attribute values sent from an AP to an RP may only be valid for its defined use 
 
 ##### Date Consented
 
-As referenced in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems.
+As referenced in [Subsection 3.1.5](https://github.com/usnistgov/NISTIR-8112/blob/nist-pages/NISTIR_Metadata.md#315-data-processing), the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand when that consent was received in cases where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems.
 
 #### Consent Type
 
-As referenced in subsection 3.1.5, the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand the specific consent type where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
+As referenced in [Subsection 3.1.5](https://github.com/usnistgov/NISTIR-8112/blob/nist-pages/NISTIR_Metadata.md#315-data-processing), the RP and AP may have agreed in advance on attribute metadata for conveying subject consent as a basis for processing the data when required by law or policy. In addition, some RPs may wish to understand the specific consent type where consent is being obtained as a voluntary best practice or to use as a factor in evaluating how reliable subjects’ assumptions are about how their data is being processed in order to take additional steps to manage privacy risks in their systems. Potential values for this element include, but are not limited to: opt-in, opt-out, parental-delegated, power of attorney-delegated.
 
 ##### Acceptable Uses
 
