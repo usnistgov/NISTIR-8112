@@ -114,7 +114,7 @@ Taken in conjunction with the accuracy metadata, this information can enable the
 
 **Privacy Considerations**: Provenance metadata reveal information about the relationship between the data source and the subject which could allow for profiling of the subject beyond the purpose of authorization and which the subject may not know is occurring. For example, the origin value could reveal employment status and location, socio-economic information, or even health history; all of which may have unintended and potentially negative consequences for a subject's privacy. 
 
-Selection and use of these metadata elements should be carefully considered based on both authorization needs as well as a privacy risk assessment. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value’s verification method without the origin element-the value of which may not outweigh the risk to privacy. The original source of the information may not be essential as long as the value has been verified using an acceptable method. To the extent selection of these elements are operationally necessary, RPs may manage the privacy risk through additional policies such as limiting use of the value outside of the authorization process or retaining the record of the verification without the actual value.
+Selection and use of these metadata elements should be carefully considered based on both authorization needs as well as a privacy risk assessment. For example, when leveraging attributes for access to moderate assurance level services that involve customers (i.e., non-enterprise users) it may be sufficient for the RP to request an attribute value’s verification method without the origin element-the value of which may not outweigh the risk to privacy. The original source of the information may not be essential as long as the value has been verified using an acceptable method. To the extent selection of these elements is operationally necessary, RPs may manage the privacy risk through additional policies such as limiting use of the value outside of the authorization process or retaining the record of the verification without the actual value.
 
 #### 3.2.1.2. Accuracy Metadata Elements
 
@@ -154,7 +154,7 @@ This metadata element contains information on the process used to confirm that a
 
 ##### Last Verification
 
-RPs may not trust certain attribute values unless they've been verified within a certain time period. This is particularly true for certain values associated with attributes such as *Role* or *Security Clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata providesonly the last date that verification occurred, and does not include any information about *method* of verification.
+RPs may not trust certain attribute values unless they have been verified within a certain time period. This is particularly true for certain values associated with attributes such as *Role* or *Security Clearance*, where the original established date of the value alone may not be sufficient for granting access to national security systems or data. `Last Verification` provides the most recent date and time at which the value was verified as true and belonging to the specified individual. This metadata providesonly the last date that verification occurred, and does not include any information about *method* of verification.
 
 ##### Last Refresh
 
@@ -195,9 +195,9 @@ This metadata element explains to receiving entities the use conditions for the 
 
 ##### Cache Time to Live
 
-This metadata element describes the length of time which a specific attribute value may reside in cache memory for use again in future transactions. Due to the sensitivity of certain attributes values, this metadata element enables the parties involved to properly cache and handle the values they are sending and retrieving as part of their transactions. In some cases the time to live may be dictated by regulation or law and this information needs to be relayed to RP systems so data are handled accordingly. The more sensitive an attribute value, the shorter time it will likely be enabled to live in temporary memory.
+This metadata element describes the length of time for which a specific attribute value may reside in cache memory for use again in future transactions. Due to the sensitivity of certain attributes values, this metadata element enables the parties involved to cache properly and handle the values they are sending and retrieving as part of their transactions. In some cases the time to live may be dictated by regulation or law and this information needs to be relayed to RP systems so data are handled accordingly. The more sensitive an attribute value, the shorter time it will likely be enabled to live in temporary memory.
 
-**NB**: Attribute value sensitivity cannot be treated as an absolute metric. Sensitivity is a contextual, risk-based determination. Therefore, even if an AP makes a determination that within the context of its system, the attribute value is not sensitive, receiving entities should make their own periodic risk assessments as to the attribute value’s sensitivity based on the context of their systems, uses, and aggregation of additional data. 
+**NB**: Attribute value sensitivity cannot be treated as an absolute metric. Sensitivity is a contextual, risk-based determination. Therefore, even if an AP makes a determination that the attribute value is not sensitive within the context of its system, receiving entities should make their own periodic risk assessments as to the attribute value’s sensitivity based on the context of their systems, uses, and aggregation of additional data. 
 
 ##### Data Deletion Date
 
@@ -222,9 +222,9 @@ Making certain attribute values available to RPs can carry national security imp
 
 1. **Unclassified** - Unclassified attribute values are those that carry with them no national security implications. This does not, however, indicate that they are not sensitive, not in need of specific protections, or that they are available publicly.
 1. **Controlled Unclassified** - These attribute values are not sensitive enough to have a negative impact on national security, but are none the less sensitive enough that they should be protected from improper access or exposure (e.g., For Official Use Only or "FOUO" information).
-1. **Confidential** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause damage to national security.
-1. **Secret** - Attribute values, which if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
-1. **Top Secret** - Attribute values, which if subject to unauthorized disclosure could be expected to cause exceptionally grave damage to national security.
+1. **Confidential** - Attribute values, which, if subject to unauthorized disclosure, could be expected to cause damage to national security.
+1. **Secret** - Attribute values, which, if subject to unauthorized disclosure, could be expected to cause serious damage to national security.
+1. **Top Secret** - Attribute values, which, if subject to unauthorized disclosure, could be expected to cause exceptionally grave damage to national security.
 1. **Company Confidential** - Attribute values which, if released, may cause damage to the organization, or the employees of the organization, that produced, generated, or maintains the values. For example the professional title or specialization of a specific employee, if exposed, may inadvertently reveal information about a sensitive company project.  
 
 As with all classified information, the determination of the classification level for any attribute must be made by the appropriate authority and the integrity of this classification must be maintained as the attribute and its values are transmitted or stored in by IT systems.
