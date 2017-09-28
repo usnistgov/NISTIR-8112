@@ -10,12 +10,12 @@ Access control policy increasingly depends on evaluating the attributes of the i
 
 This NISTIR proposes attribute schema metadata and attribute value metadata to convey information about a subject's attribute(s) to allow for a relying party (RP) to:
 
-* Obtain greater understanding of how the attribute and its value were obtained, determined, and vetted;
+* Achieve greater understanding of how the attribute and its value were obtained, determined, and vetted;
 * Promote greater confidence in applying appropriate authorization decisions to subjects external to the domain of a protected system or data (i.e., external users);
 * Enable more effective authorization decisions; and 
 * Promote federation of attributes.
 
-The model proposed in this document allows RPs determine the most appropriate attribute metadata elements for a given transaction. In the future, it could serve as a foundation for an attribute confidence scoring structure to further simplify the process of aligning attribute based authorization decisions with the risk environment.
+The model proposed in this document allows RPs to determine the most appropriate attribute metadata elements for a given transaction. In the future, it could serve as a foundation for an attribute confidence scoring structure to simplify further the process of aligning attribute based authorization decisions with the risk environment.
 
 In addition, as a NISTIR, this document is intended to be treated as an "implementers' draft" so that developers and business owners can determine the efficacy and required adjustments of the attribute metadata elements. By issuing this as an implementers' draft, NIST seeks to obtain feedback on agencies' and industries' experiences with this approach in order to identify next steps, such as potentially transitioning this document to a NIST SP or a contribution to a private sector standards developer.
 
