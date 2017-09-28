@@ -4,7 +4,7 @@
 
 ## 4. Use Cases
 
-This section details three use cases as a means of demonstrating the ways in which ASM and AVM can be leveraged to enrich authorization decisions, facilitate cross boundary interoperability and trust, and enable adoption of federated attributes. Each use case carries with it a set of authorization and privacy considerations as well as suggested metadata necessary to fulfill evaluation of the requisite authorization policy, as well as an example of what an AVM assertion may look like.
+This section details three use cases as a means of demonstrating the ways in which ASM and AVM can be leveraged to enrich authorization decisions, facilitate cross boundary interoperability and trust, and enable adoption of federated attributes. Each use case carries with it a set of authorization and privacy considerations as well as suggested metadata necessary to fulfill evaluation of the requisite authorization policy, in addition to an example of what an AVM assertion may look like.
 
 The use cases are:  
 1. Federated Access to Classified Documents in an Information Sharing Environment    
@@ -28,7 +28,7 @@ While in an actual implementation there may be many different attributes require
 
 #### Authorization Considerations
 
-In a traditional ABAC scenario, the assertion from the Army system would only provide the value that they maintain within their own records. As a result, the receiving agency’s access control system is only able to make a decision based upon the asserted attribute value and nothing more (i.e., the employee’s clearance is Secret so therefore they are authorized for access). Information such as: the recency of the clearance issuance, when it was last verified by the asserting agency, and from where the value originated are not factored into the process. 
+In a traditional ABAC scenario, the assertion from the Army system would only provide the value that they maintain within their own records. As a result, the receiving agency’s access control system is only able to make a decision based upon the asserted attribute value and nothing more (i.e., the employee’s clearance is Secret therefore they are authorized for access). Information such as: the recency of the clearance issuance, when it was last verified by the asserting agency, and from where the value originated are not factored into the process. 
 
 With the inclusion of attribute metadata, the relying agency is able to make an informed, risk-based decision by adding the evaluation of the attribute metadata into their ABAC policies. For example, they could determine that anyone accessing this specific resource must have a Secret clearance that: originated from a DoD entity, has been verified in the last six months, and was verified by the providing entity against an authoritative database.
 
@@ -190,7 +190,7 @@ For this transaction, the VA has identified the attribute *Veteran Status* as cr
 
 #### Privacy Considerations
 
-In this use case, some metadata elements with privacy implications, such as `provider`, are necessary for the transaction. Since this must be included, it’s important to ensure that Jane is aware of the fact that her information is being transferred as metadata in transactions. By gaining explicit consent from Jane before releasing her veteran status (as required by the authorization policy), Jane is notified of the transfer of this attribute value, and she gives her permission for the transfer. Other metadata elements with privacy implications, such as `origin`, are not needed in this transaction, technically or policy-wise. Thus, they should be excluded since they’re not necessary and their inclusion would potentially reveal a broad profile of Jane (e.g., related to her associations with certain organizations).
+In this use case, some metadata elements with privacy implications, such as `provider`, are necessary for the transaction. Since this must be included, it’s important to ensure that Jane is aware of the fact that her information is being transferred as metadata in transactions. By gaining explicit consent from Jane before releasing her veteran status (as required by the authorization policy), Jane is notified of the transfer of this attribute value, and she gives her permission for the transfer. Other metadata elements with privacy implications, such as `origin`, are not needed in this transaction, technically or policy-wise. Thus, they should be excluded since they are not necessary and their inclusion would potentially reveal a broad profile of Jane (e.g., related to her associations with certain organizations).
 
 #### Suggested Attribute Value Metadata
 
@@ -268,7 +268,7 @@ We assume in this example that the access request was sent on 7/1/16. The FBI al
 
 #### Privacy Considerations
 
-In this use case, certain metadata elements are necessary to demonstrate compliance with access requirements for this database. However, excessive metadata collection that extends beyond these requirements could unnecessarily reveal information about law enforcement officials accessing the system. For example, provider metadata is not necessary for this transaction, and could reveal unintended information about Claude by divulging his relationship with the provider organization. Other metadata elements (e.g., origin) are necessary, but might still have privacy implications for Claude by revealing information about him. In these instances, it’s important to—when possible—ensure that Claude is aware of which information is being transferred.
+In this use case, certain metadata elements are necessary to demonstrate compliance with access requirements for this database. However, excessive metadata collection that extends beyond these requirements could unnecessarily reveal information about law enforcement officials accessing the system. For example, provider metadata is not necessary for this transaction, and could reveal unintended information about Claude by divulging his relationship with the provider organization. Other metadata elements (e.g., origin) are necessary, but might still have privacy implications for Claude by revealing information about him. In these instances, it is important to—when possible—ensure that Claude is aware of which information is being transferred.
 
 #### Suggested Attribute Value Metadata
 
