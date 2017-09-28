@@ -65,8 +65,8 @@ Technology and Director*
 
 <div class="text-center" markdown="1">
 
-National Institute of Standards and Technology Special Publication 800-63-3  
-Natl. Inst. Stand. Technol. Spec. Publ. 800-63-3, xxx pages (MonthTBD 2016)  
+National Institute of Standards and Technology Internal Report 8112  
+Natl. Inst. Stand. Technol. NISTIR 8112, xxx pages (MonthTBD 2017)  
 CODEN: NSPUE2
 
 
@@ -81,8 +81,7 @@ https://doi.org/10.6028/NIST.SP.XXX
 There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST.
 Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST. Many NIST cybersecurity publications, other than the ones noted above, are available at [http://csrc.nist.gov/publications](http://csrc.nist.gov/publications).  
 
-**Comments on this publication may be submitted to: <nsticworkshop@nist.gov>  
-Public comment period: 01 August 2016 - 30 September 2016**  
+**Comments on this publication may be submitted to: <nsticworkshop@nist.gov>  **  
 All comments are subject to release under the Freedom of Information Act (FOIA).
 
 National Institute of Standards and Technology  
@@ -93,19 +92,7 @@ Email: <nsticworkshop@nist.gov>
 
 ### Reports on Computer Systems Technology
 
-The Information Technology Laboratory (ITL) at the National Institute of
-Standards and Technology (NIST) promotes the U.S. economy and public
-welfare by providing technical leadership for the Nation’s measurement
-and standards infrastructure. ITL develops tests, test methods,
-reference data, proof of concept implementations, and technical analyses
-to advance the development and productive use of information technology.
-ITL’s responsibilities include the development of management,
-administrative, technical, and physical standards and guidelines for the
-cost-effective security and privacy of other than national
-security-related information in Federal information systems. The Special
-Publication 800-series reports on ITL’s research, guidelines, and
-outreach efforts in information system security, and its collaborative
-activities with industry, government, and academic organizations.
+The Information Technology Laboratory (ITL) at the National Institute of Standards and Technology (NIST) promotes the U.S. economy and public welfare by providing technical leadership for the Nation’s measurement and standards infrastructure. ITL develops tests, test methods, reference data, proof of concept implementations, and technical analyses to advance the development and productive use of information technology. ITL’s responsibilities include the development of management, administrative, technical, and physical standards and guidelines for the cost-effective security and privacy of other than national security-related information in Federal information systems.
 
 ### Abstract
 This NIST Internal Report contains a metadata schema for attributes that may be asserted about an individual during an online transaction. The schema can be used by relying parties to enrich access control policies, as well as during run-time evaluation of an individual's ability to access protected resources. Attribute metadata could also create the possibility for data sharing permissions and limitations on individual data elements. There are other possible applications of attribute metadata, such as evaluation and execution of business logic in decision support systems; however the metadata contained herein is focused on supporting an organization's risk-informed authorization policies and evaluation.
